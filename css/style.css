@@ -66,7 +66,7 @@ header{
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #c33a08;
     --bs-btn-hover-border-color: #c33a08;
-    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-focus-shadow-rgb: 13,110,253; 
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #f65519;
     --bs-btn-active-border-color: #000;
@@ -80,5 +80,11 @@ header{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
+  }
+main {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
   }
   
