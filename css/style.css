@@ -93,3 +93,9 @@ main {
     font-style: normal;
     
   }
+
+.conteudo{
+    width: 1116px;
+    display: flex;
+    justify-content: center;
+}
