@@ -99,3 +99,26 @@ main {
     display: flex;
     justify-content: center;
 }
+.container-fluid {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.divider {
+margin: 150px 0;
+}
