@@ -1,23 +1,27 @@
 * {
-    padding:0;
-    margin:0;
-    vertical-align:baseline;
-    list-style:none;
-    border:0
-    }
-body{
-background-color: #FFF7DA;
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0
 }
+
+body {
+    background-color: #FFF7DA;
+}
+
 .nav-link {
-color: rgb(0, 0, 0);
-}    
-header{
+    color: rgb(0, 0, 0);
+}
+
+header {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: impact;
     font-size: 22px;
 
 }
+
 .nav {
     --bs-nav-link-padding-x: 1rem;
     --bs-nav-link-padding-y: 0.5rem;
@@ -31,19 +35,23 @@ header{
     margin-bottom: 0;
     list-style: none;
 }
-.logo{
-    padding:0;
-    margin:0;
-    vertical-align:baseline;
-    list-style:none;
-    border:0
+
+.logo {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0
 }
-#home{
-    color:#F65519;
+
+#home {
+    color: #F65519;
 }
-#home:hover{
+
+#home:hover {
     color: #000;
 }
+
 .btn-primary {
     --bs-btn-color: #fff;
     --bs-btn-bg: #F65519;
@@ -51,7 +59,7 @@ header{
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #c33a08;
     --bs-btn-hover-border-color: #fff;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #F65519;
     --bs-btn-active-border-color: #000;
@@ -60,13 +68,14 @@ header{
     --bs-btn-disabled-bg: #f65519;
     --bs-btn-disabled-border-color: #f65519;
 }
+
 .btn-outline-primary {
     --bs-btn-color: #000;
     --bs-btn-border-color: #f65519;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #c33a08;
     --bs-btn-hover-border-color: #c33a08;
-    --bs-btn-focus-shadow-rgb: 13,110,253; 
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #f65519;
     --bs-btn-active-border-color: #000;
@@ -76,34 +85,39 @@ header{
     --bs-btn-disabled-border-color: #f65519;
     --bs-gradient: none;
 }
+
 .bebas-neue-regular {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
+
 main {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
-  }
-  #inclusao {
+}
+
+#inclusao {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    
-  }
 
-.conteudo{
+}
+
+.conteudo {
     width: 1116px;
     display: flex;
     justify-content: center;
 }
+
 .container-fluid {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
+
 .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -119,6 +133,8 @@ main {
     font-weight: 400;
     font-style: normal;
 }
+
 .divider {
-margin: 150px 0;
+    margin: 100px 0;
 }
+
