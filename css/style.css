@@ -137,4 +137,10 @@ main {
 .divider {
     margin: 100px 0;
 }
+footer{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
 
