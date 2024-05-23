@@ -108,17 +108,17 @@
                     <li><a href="#" class="nav-link px-3">Mapa</a></li>
                     <li><a href="#" class="nav-link px-3">Hotel</a></li>
                     <li><a href="#" class="nav-link px-3">Atrações</a></li>
-                    <li><a href="ingresso.html" class="nav-link px-3">Ingressos</a></li>
+                    <li><a href="pag-ingresso.html" class="nav-link px-3">Ingressos</a></li>
                     <li><a href="#" class="nav-link px-3">Contato</a></li>
                   </ul>
             
                   <div class="col-sm-2 text-end">
-                    <button type="button" class="btn btn-outline-primary me-2">
-                      Login
-                    </button>
-                    <button type="button" class="btn btn-primary" id="sing">
-                      Sign-up
-                    </button>
+                    <a href="pag-login.html" class="btn btn-outline-primary me-2">
+                        Login
+                    </a>
+                    <a href="pag-cadastro.html" class="btn btn-primary">
+                        Sign-up
+                    </a>
                   </div>
                 </header>
             </div>
@@ -143,20 +143,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-lg-4">
-                                                <div class="page-header-breadcrumb">
-                                                    <ul class="breadcrumb-title">
-                                                        <li class="breadcrumb-item">
-                                                            <a href="index-1.htm"> <i class="feather icon-home"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"><a href="#!">E-Commerce</a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Shopping cart</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
                                         </div>
                                     </div>
                                     <!-- Page-header end -->
@@ -168,7 +154,7 @@
                                                 <!-- Shopping cart start -->
                                                 <div class="card" style="border: black solid 1px;">
                                                     <div class="card-header">
-                                                        <h5 style="font-size: 30px; font-family: Bebas Neue, sans-serif;">Carrinho</h5>
+                                                        <h5 style="font-size: 30px; font-family: Bebas Neue, sans-serif;">Ingressos</h5>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="row">
@@ -178,7 +164,7 @@
                                                                         <form class="wizard-form" id="basic-forms"
                                                                             action="#">
                                                                             <!-- Shopping cart field et start -->
-                                                                            <h3> Ingresso </h3>
+                                                                            <!-- <h3> Ingresso </h3> -->
                                                                             <fieldset class="scroll-container">
                                                                                 <table id="e-product-list"
                                                                                     class="table table-responsive table-striped dt-responsive nowrap dataTable no-footer dtr-inline cart-page"
@@ -258,6 +244,9 @@
                                                                                                     data-original-title="Delete"><i
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
+                                                                                            <td>
+                                                                                                <p><a class="btn btn-primary" href="#">Comprar</a></p>
+                                                                                            </td>
                                                                                         </tr>
                                                                                         <tr class="even">
                                                                                             <td class="pro-list-img"
@@ -297,6 +286,9 @@
                                                                                                     data-original-title="Delete"><i
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
+                                                                                            <td>
+                                                                                                <p><a class="btn btn-primary" href="#">Comprar</a></p>
+                                                                                            </td>
                                                                                         </tr>
                                                                                         <tr class="odd">
                                                                                             <td class="pro-list-img"
@@ -334,11 +326,14 @@
                                                                                                     data-original-title="Delete"><i
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
+                                                                                            <td>
+                                                                                                <p><a class="btn btn-primary" href="#">Comprar</a></p>
+                                                                                            </td>
                                                                                         </tr>
                                                                                         <!-- <tr class="even">
                                                                                             <td class="pro-list-img"
                                                                                                 tabindex="0">
-                                                                                                <img src="..\adminty-dashboard-master\files\assets\images\product-list\pro-l3.png"
+                                                                                                <img src="files\assets\images\product-list\pro-l3.png"
                                                                                                     class="img-fluid"
                                                                                                     alt="tbl">
                                                                                             </td>
@@ -370,441 +365,8 @@
                                                                                     </tbody>
                                                                                 </table>
                                                                             </fieldset>
-                                                                            <!-- Shopping cart fieldset end -->
-                                                                            <!-- Delivery Details fieldset start -->
-                                                                            <h3> Entrega </h3>
-                                                                            <fieldset class="scroll-container">
-                                                                                <div class="row justify-content-center">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label
-                                                                                                        for="card-number"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Primeiro
-                                                                                                        nome *</label>
-                                                                                                    <input id="name-2"
-                                                                                                        name="name"
-                                                                                                        type="text"
-                                                                                                        class="form-control">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label
-                                                                                                        for="card-number"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Último
-                                                                                                        nome *</label>
-                                                                                                    <input
-                                                                                                        id="surname-2"
-                                                                                                        name="surname"
-                                                                                                        type="text"
-                                                                                                        class="form-control">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label
-                                                                                                        for="card-number"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Selecione o
-                                                                                                        País</label>
-                                                                                                    <select
-                                                                                                        class="form-control required">
-                                                                                                        <option>Selecione o
-                                                                                                            País
-                                                                                                        </option>
-                                                                                                        <option>Argentina
-                                                                                                        </option>
-                                                                                                        <option>Brasil
-                                                                                                        </option>
-                                                                                                        <option>Dinamarca
-                                                                                                        </option>
-                                                                                                        <option>Escócia
-                                                                                                        </option>
-                                                                                                        <option>Estados Unidos
-                                                                                                        </option>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="address"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Endereço
-                                                                                                        *</label>
-                                                                                                    <input id="address"
-                                                                                                        name="address"
-                                                                                                        type="text"
-                                                                                                        class="form-control">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="city"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Cidade
-                                                                                                        *</label>
-                                                                                                    <input id="city"
-                                                                                                        name="city"
-                                                                                                        type="text"
-                                                                                                        class="form-control">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="phone-2"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Celular
-                                                                                                        *</label>
-                                                                                                    <input id="phone-2"
-                                                                                                        name="phone"
-                                                                                                        type="number"
-                                                                                                        class="form-control phone">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="email"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Email
-                                                                                                        #</label>
-                                                                                                    <input id="email"
-                                                                                                        name="email"
-                                                                                                        type="email"
-                                                                                                        class="form-control">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div
-                                                                                                    class="form-group row">
-                                                                                                    <label for="date"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Data
-                                                                                                        Do Aniversário</label>
-                                                                                                    <input id="date"
-                                                                                                        name="Date Of Birth"
-                                                                                                        type="text"
-                                                                                                        class="form-control date-control">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-
-                                                                            </fieldset>
-                                                                            <!-- Delivery Details fieldset end -->
-                                                                            <!-- Payment Details fieldset start -->
-                                                                            <h3> Pagamento </h3>
-                                                                            <fieldset class="bank-detail">
-                                                                                <div class="row justify-content-center">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div
-                                                                                                    class="input-group">
-                                                                                                    <select
-                                                                                                        id="hello-single"
-                                                                                                        class="form-control" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                        <option
-                                                                                                            value="" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                            ----
-                                                                                                            Selecione o
-                                                                                                            cartão ----
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="married">
-                                                                                                            Visa
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="unmarried">
-                                                                                                            MasterCard
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="married">
-                                                                                                            American
-                                                                                                            Express
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="unmarried">
-                                                                                                            Elo
-                                                                                                        </option>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label
-                                                                                                        for="card-number"
-                                                                                                        class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Número
-                                                                                                        do
-                                                                                                        Cartão</label>
-                                                                                                    <input
-                                                                                                        id="card-number"
-                                                                                                        class="form-control"
-                                                                                                        type="text"
-                                                                                                        name="card_number">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <label
-                                                                                                    for="expdate-month"
-                                                                                                    class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Data
-                                                                                                    de
-                                                                                                    expiração</label>
-                                                                                                <div
-                                                                                                    class="row gutter-xs">
-                                                                                                    <div
-                                                                                                        class="col-md-6">
-                                                                                                        <div
-                                                                                                            class="input-group">
-                                                                                                            <select
-                                                                                                                id="expdate-month"
-                                                                                                                class="form-control"
-                                                                                                                name="expdate_month">
-                                                                                                                <option
-                                                                                                                    value=""
-                                                                                                                    selected="selected">
-                                                                                                                    Mês
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="1">
-                                                                                                                    01
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2">
-                                                                                                                    02
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="3">
-                                                                                                                    03
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="4">
-                                                                                                                    04
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="5">
-                                                                                                                    05
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="6">
-                                                                                                                    06
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="7">
-                                                                                                                    07
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="8">
-                                                                                                                    08
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="9">
-                                                                                                                    09
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="10">
-                                                                                                                    10
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="11">
-                                                                                                                    11
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="12">
-                                                                                                                    12
-                                                                                                                </option>
-                                                                                                            </select>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="col-md-6">
-                                                                                                        <div
-                                                                                                            class="form-group">
-                                                                                                            <select
-                                                                                                                id="expdate-year"
-                                                                                                                class="form-control"
-                                                                                                                name="expdate_year">
-                                                                                                                <option
-                                                                                                                    value=""
-                                                                                                                    selected="selected">
-                                                                                                                    Ano
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2016">
-                                                                                                                    2016
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2017">
-                                                                                                                    2017
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2018">
-                                                                                                                    2018
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2019">
-                                                                                                                    2019
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2020">
-                                                                                                                    2020
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2021">
-                                                                                                                    2021
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2022">
-                                                                                                                    2022
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2023">
-                                                                                                                    2023
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2024">
-                                                                                                                    2024
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2025">
-                                                                                                                    2025
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2026">
-                                                                                                                    2026
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2027">
-                                                                                                                    2027
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2028">
-                                                                                                                    2028
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2029">
-                                                                                                                    2029
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2030">
-                                                                                                                    2030
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2031">
-                                                                                                                    2031
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2032">
-                                                                                                                    2032
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2033">
-                                                                                                                    2033
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2034">
-                                                                                                                    2034
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2035">
-                                                                                                                    2035
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="2036">
-                                                                                                                    2036
-                                                                                                                </option>
-                                                                                                            </select>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="col-md-5 offset-md-1">
-                                                                                                <div class="row">
-                                                                                                    <div
-                                                                                                        class="col-md-12">
-                                                                                                        <div
-                                                                                                            class="form-group">
-                                                                                                            <label
-                                                                                                                for="cvv2-number"
-                                                                                                                class="form-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Código
-                                                                                                                de
-                                                                                                                Segurança</label>
-                                                                                                            <input
-                                                                                                                id="cvv2-number"
-                                                                                                                class="form-control"
-                                                                                                                type="text"
-                                                                                                                name="cvv2_number">
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <div class="form-group">
-                                                                                                    <label
-                                                                                                        for="promotional-code"
-                                                                                                        class="control-label" style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Cupom
-                                                                                                    </label>
-                                                                                                    <input
-                                                                                                        id="promotional-code"
-                                                                                                        class="form-control"
-                                                                                                        type="text"
-                                                                                                        name="promotional_code">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <!-- <a href="#confirmation"  class="btn btn-primary btn-block">enviar</a> -->
-                                                                                    </div>
-                                                                                </div>
-                                                                            </fieldset>
-                                                                            <!-- Payment Details fieldset end -->
-                                                                            <!-- Confirmation fieldset start -->
-                                                                            <h3> Confirmação </h3>
-                                                                            <fieldset>
-                                                                                <div class="confirmation">
-                                                                                    <div class="text-primary m-b-20">
-                                                                                        <div>
-                                                                                            <img src="img/aprovar.png" alt="aprovar" style="height: 100px;">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="confirmation-content text-center">
-                                                                                        <h3 style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Parabéns! Seu pedido
-                                                                                            foi aceito.</h3>
-                                                                                        <div class="row">
-                                                                                            <div
-                                                                                                class="">
-                                                                                                <p>
-                                                                                                    Seu pagamento foi
-                                                                                                    aprovado! Para mais
-                                                                                                    informações acesse o
-                                                                                                    email cadastrado.
-                                                                                                </p>
-                                                                                                <!-- <button
-                                                                                                    class="btn btn-primary m-y">Acompanhar
-                                                                                                    Pedido</button> -->
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </fieldset>
-                                                                            <!-- Confirmation fieldset start -->
+                                                                            <!-- Shopping cart fieldset end -->              
+                                                                
                                                                         </form>
                                                                     </section>
                                                                 </div>
@@ -819,9 +381,6 @@
                                     <!-- Page body end -->
                                 </div>
                                 <!-- Main-body end -->
-                                <div id="styleSelector">
-
-                                </div>
                             </div>
                         </div>
                     </div>
