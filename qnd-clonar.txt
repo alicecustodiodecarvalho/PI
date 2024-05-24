@@ -1,0 +1,5 @@
+-Terminal-
+cd backend
+npx prisma db push  
+npx prisma generate
+npm run dev
