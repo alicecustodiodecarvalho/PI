@@ -18374,7 +18374,7 @@ table.footable-paging-center>tfoot>tr.footable-paging>td {
     /* background: url(../images/auth/bg.jpg) no-repeat; */
     background-color: #fff7da;
     background-size: cover;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
