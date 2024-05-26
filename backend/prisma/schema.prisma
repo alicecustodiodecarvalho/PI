@@ -32,22 +32,22 @@ model usuario {
   usuario       String?       @db.VarChar(50)
   email         String?       @db.VarChar(255)
   senha         String?       @db.VarChar(100)
-  tipo          usuario_tipo?
   telefone      String?       @db.VarChar(20)
   nascimento    DateTime?     @db.Date
   cpf           String?       @db.Char(11)
   cnpj          String?       @db.Char(14)
+  tipo          usuario_tipo?
   ingresso      ingresso[]
-}
-
-enum usuario_tipo {
-  Administrador
-  Funcion_rio   @map("Funcionário")
-  Cliente
 }
 
 enum ingresso_ingresso_tipo {
   Inteira
   Meia_Entrada @map("Meia-Entrada")
   Isen__o      @map("Isenção")
+}
+
+enum usuario_tipo {
+  Administrador
+  Funcionario
+  Cliente
 }

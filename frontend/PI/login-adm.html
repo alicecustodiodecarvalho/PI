@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
-                    <form class="md-float-material form-material">
+                    <form id="form" class="md-float-material form-material">
                         <div class="auth-box card" style="border: black solid 1px; border-radius: 20px; ">
                             <div class="card-block">
                                 <div class="row m-b-20">
@@ -124,19 +124,26 @@
                                 </div> -->
                                 <!-- <p class="text-muted text-center p-b-5">Conecte-se na sua conta regular</p> -->
                                 <div class="form-group form-primary">
-                                    <input type="text" name="user-name" class="form-control" required=""
+                                    <input type="text" name="user-name" id="nome" class="form-control" required=""
                                         placeholder="Nome de usuário">
                                     <span class="form-bar"></span>
                                 </div>
+
                                 <div class="form-group form-primary">
-                                    <input type="password" name="password" class="form-control" required=""
+                                    <input type="email" name="user-email" id="email" class="form-control" required=""
+                                        placeholder="email">
+                                    <span class="form-bar"></span>
+                                </div>
+
+                                <div class="form-group form-primary">
+                                    <input type="password" name="password" id="senha" class="form-control" required=""
                                         placeholder="Senha">
                                     <span class="form-bar"></span>
                                 </div>
                                
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <a class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" href="pag-adm.html">Login</a>
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">login</button>
 
                                     </div>
                                 </div>
@@ -291,12 +298,35 @@
     <script type="text/javascript" src="files\assets\js\common-pages.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        document.getElementById('form').addEventListener('submit', async function (event) {
+            event.preventDefault();
 
-        gtag('config', 'UA-23581568-13');
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/user');
+                const result = await response.json();
+                const user = result.users.find(user => user.usuario === nome && user.email === email && user.tipo === "Administrador");
+
+                if (user) {
+                    if (user.senha === senha) {
+                        alert('Login realizado com sucesso!');
+                        window.location.href = 'pag-adm.html'; // Redirecionar para a página de dashboard ou qualquer outra
+                    } else {
+                        alert('Senha incorreta!');
+                    }
+                } else {
+                    alert('Administrador ou funcionário não encontrado!');
+                }
+            } catch (error) {
+                console.error('Erro ao realizar login', error);
+                alert('Um erro ocorreu, tente novamente mais tarde');
+            }
+        });
     </script>
 </body>
 
