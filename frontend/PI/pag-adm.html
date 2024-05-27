@@ -57,142 +57,143 @@
     <style>
         /* MODAL */
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
 
-#modal-editar {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+        #modal-editar {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
 
-.modal-content-adicionar,
-.modal-content-editar {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 60%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-.close-adicionar,
-.close-editar {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+        .modal-content-adicionar,
+        .modal-content-editar {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
 
-.close-adicionar:hover,
-.close-adicionar:focus,
-.close-editar:hover,
-.close-editar:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+        .close-adicionar,
+        .close-editar {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-#formAdicionar,
-#form-editar {
-  display: flex;
-  flex-direction: column;
-}
+        .close-adicionar:hover,
+        .close-adicionar:focus,
+        .close-editar:hover,
+        .close-editar:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-.btn-excluir {
-  margin-top: 10px;
-  background-color: #ff4c4c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
+        #formAdicionar,
+        #form-editar {
+            display: flex;
+            flex-direction: column;
+        }
 
-.btn-excluir:hover {
-  background-color: #e60000;
-}
+        .btn-excluir {
+            margin-top: 10px;
+            background-color: #ff4c4c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
 
-.btn-abrirEditar,
-.btn-editar {
-  margin-top: 10px;
- 
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.btn-abrirEditar:hover
-.btn-editar:hover {
-  background-color: #2d2828;
-}
+        .btn-excluir:hover {
+            background-color: #e60000;
+        }
 
-#modalAdicionar {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+        .btn-abrirEditar,
+        .btn-editar {
+            margin-top: 10px;
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 60%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
 
-#formAdicionar label {
-  font-size: .875rem;
-  font-weight: 400;
-  margin-bottom: .5rem;
-  color: #7b809a;
-  margin-left: .25rem;
-}
+        .btn-abrirEditar:hover .btn-editar:hover {
+            background-color: #2d2828;
+        }
 
-#formAdicionar input[type="text"],
-#formAdicionar input[type="email"] {
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+        #modalAdicionar {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
 
-#formAdicionar input[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
 
-#formAdicionar input[type="submit"]:hover {
-  background-color: #0056b3;
-}
+        #formAdicionar label {
+            font-size: .875rem;
+            font-weight: 400;
+            margin-bottom: .5rem;
+            color: #7b809a;
+            margin-left: .25rem;
+        }
 
-/* .btn-abrir-modal {
+        #formAdicionar input[type="text"],
+        #formAdicionar input[type="email"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #formAdicionar input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #formAdicionar input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* .btn-abrir-modal {
     background-color: #57566e;
     color: #fff;
     border: none;
@@ -201,9 +202,9 @@
     cursor: pointer;
 } */
 
-.btn-abrir-modal:hover {
-    background-color: #1f1d22;
-}
+        .btn-abrir-modal:hover {
+            background-color: #1f1d22;
+        }
     </style>
 </head>
 
@@ -326,7 +327,8 @@
                                                                     <th>Editar</th>
                                                                     <th>Excluir</th>
                                                                     <th><a href="#" style="font-size: 20px;"> <i
-                                                                        id="btnAbrirModalAdicionar" class="fa-solid fa-user-plus"></i>
+                                                                                id="btnAbrirModalAdicionar"
+                                                                                class="fa-solid fa-user-plus"></i>
                                                                             Criar</a>
                                                                     </th>
                                                                 </tr>
@@ -339,10 +341,14 @@
                                                                     <td>2024/05/25</td>
                                                                     <td>$20,00</td>
                                                                     <td> <button type="button"><i
-                                                                        class="btn-abrirEditar" class="icofont icofont-edit-alt"></i></button>
+                                                                                class="btn-abrirEditar"
+                                                                                class="icofont icofont-edit-alt"></i></button>
                                                                     </td>
-                                                                    <td>  <button type="button" id="btn-excluir" class="btn-excluir"><i
-                                                                        class="icofont icofont-delete-alt"></i></button> </td>
+                                                                    <td>
+                                                                        <button type="button" id="btn-excluir"class="btn-excluir">
+                                                                            <i class="icofont icofont-delete-alt"></i>
+                                                                        </button>
+                                                                    </td>
                                                                 </tr>
                                                             </tbody>
                                                             <tfoot>
@@ -438,15 +444,15 @@
         <div class="modal-content-editar">
             <span class="close-editar">&times;</span>
             <h2>Editar usuario</h2>
-            <form id="form-editar"> 
+            <form id="form-editar">
                 <label for="id">ID:</label>
-                <input type="text" id="id" readonly/>
+                <input type="text" id="id" readonly />
 
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" required/>
+                <input type="text" id="nome" required />
 
                 <label for="email">Email:</label>
-                <input type="text" id="email" required/>
+                <input type="text" id="email" required />
 
                 <input class="btn-editar" type="submit" value="Editar">
 
@@ -473,7 +479,7 @@
             </form>
         </div>
     </div>
-<!-- fim modal (editar/excluir/add)  -->
+    <!-- fim modal (editar/excluir/add)  -->
 
     <hr class="divider" style="margin-bottom: 0;">
 
@@ -664,7 +670,7 @@
                     } else {
                         const newUser = {
                             nome_completo: nome,
-                            usuario : nome_usuario,
+                            usuario: nome_usuario,
                             email: email,
                             tipo: "Cliente"
                         };
@@ -716,10 +722,12 @@
                 });
             }
 
-            function criarUser(user, index) {
+            function criarUser(user, index, id) {
                 const row = document.createElement("tr");
 
                 if (user.tipo == "Cliente") {
+                    const idUser = user.id
+
                     const tdNome = document.createElement("td");
                     tdNome.textContent = user.nome_completo;
 
@@ -736,19 +744,28 @@
                     const tdValor = document.createElement("td");
                     tdValor.textContent = user.valor;
 
+                    // <button type="button" id="btn-excluir"class="btn-excluir">
+                    //     <i class="icofont icofont-delete-alt"></i>
+                    // </button>
+
                     const tdEditar = document.createElement("td");
                     const aEditar = document.createElement("a");
-                    aEditar.href = "#!";
+                    aEditar.classList.add("btn-abrirEditar")
                     const iconeEditar = document.createElement("i");
                     iconeEditar.classList.add("icofont", "icofont-edit-alt");
+                    aEditar.addEventListener("click", () => {
+                        abrirModalEditar(user, index)
+                    });
                     aEditar.appendChild(iconeEditar);
                     tdEditar.appendChild(aEditar);
-
+                    
                     const tdExcluir = document.createElement("td");
-                    const aExcluir = document.createElement("a");
-                    aExcluir.href = "#!";
+                    const aExcluir = document.createElement("button");
                     const iconeExcluir = document.createElement("i");
                     iconeExcluir.classList.add("icofont", "icofont-delete-alt");
+                    aExcluir.addEventListener("click",()=>{
+                        excluirUser(idUser)
+                    })
                     aExcluir.appendChild(iconeExcluir);
                     tdExcluir.appendChild(aExcluir);
 
@@ -760,16 +777,17 @@
                     row.appendChild(tdEditar);
                     row.appendChild(tdExcluir);
 
-                    // mudanças (excluir/editar/add)
-                    const btnAtualizar = document.createElement("button");
-                    btnAtualizar.textContent = "Edit"
-                    btnAtualizar.classList.add("btn-abrirEditar")
-                    btnAtualizar.addEventListener("click", () => {
-                        abrirModalEditar(user, index)
-                    });
+                    // // mudanças (excluir/editar/add)
+
+                    // const btnAtualizar = document.createElement("button");
+                    // btnAtualizar.textContent = "Edit"
+                    // btnAtualizar.classList.add("btn-abrirEditar")
+                    // btnAtualizar.addEventListener("click", () => {
+                    //     abrirModalEditar(user, index)
+                    // });
 
 
-                    row.appendChild(btnAtualizar);
+                    // row.appendChild(btnAtualizar);
                     // fim mudanças (excluir/editar/add)
 
                 }
