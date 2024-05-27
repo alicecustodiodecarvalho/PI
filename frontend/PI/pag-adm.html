@@ -53,6 +53,158 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link href="files/fontawesome/css/all.css" rel="stylesheet">
+
+    <style>
+        /* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modal-editar {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content-adicionar,
+.modal-content-editar {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.close-adicionar,
+.close-editar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-adicionar:hover,
+.close-adicionar:focus,
+.close-editar:hover,
+.close-editar:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#formAdicionar,
+#form-editar {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-excluir {
+  margin-top: 10px;
+  background-color: #ff4c4c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-excluir:hover {
+  background-color: #e60000;
+}
+
+.btn-abrirEditar,
+.btn-editar {
+  margin-top: 10px;
+ 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.btn-abrirEditar:hover
+.btn-editar:hover {
+  background-color: #2d2828;
+}
+
+#modalAdicionar {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#formAdicionar label {
+  font-size: .875rem;
+  font-weight: 400;
+  margin-bottom: .5rem;
+  color: #7b809a;
+  margin-left: .25rem;
+}
+
+#formAdicionar input[type="text"],
+#formAdicionar input[type="email"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#formAdicionar input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#formAdicionar input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* .btn-abrir-modal {
+    background-color: #57566e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+} */
+
+.btn-abrir-modal:hover {
+    background-color: #1f1d22;
+}
+    </style>
 </head>
 
 <body>
@@ -174,7 +326,7 @@
                                                                     <th>Editar</th>
                                                                     <th>Excluir</th>
                                                                     <th><a href="#" style="font-size: 20px;"> <i
-                                                                                class="fa-solid fa-user-plus"></i>
+                                                                        id="btnAbrirModalAdicionar" class="fa-solid fa-user-plus"></i>
                                                                             Criar</a>
                                                                     </th>
                                                                 </tr>
@@ -186,12 +338,11 @@
                                                                     <td>1</td>
                                                                     <td>2024/05/25</td>
                                                                     <td>$20,00</td>
-                                                                    <td> <a href="#!"><i
-                                                                                class="icofont icofont-edit-alt"></i></a>
+                                                                    <td> <button type="button"><i
+                                                                        class="btn-abrirEditar" class="icofont icofont-edit-alt"></i></button>
                                                                     </td>
-                                                                    <td> <a href="#!"><i
-                                                                                class="icofont icofont-delete-alt"></i></a>
-                                                                    </td>
+                                                                    <td>  <button type="button" id="btn-excluir" class="btn-excluir"><i
+                                                                        class="icofont icofont-delete-alt"></i></button> </td>
                                                                 </tr>
                                                             </tbody>
                                                             <tfoot>
@@ -281,6 +432,48 @@
             </div>
         </div>
     </div>
+
+    <!-- modal (editar/excluir/add)  -->
+    <div id="modal-editar" class="modal">
+        <div class="modal-content-editar">
+            <span class="close-editar">&times;</span>
+            <h2>Editar usuario</h2>
+            <form id="form-editar"> 
+                <label for="id">ID:</label>
+                <input type="text" id="id" readonly/>
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required/>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" required/>
+
+                <input class="btn-editar" type="submit" value="Editar">
+
+                <!-- <button type="button" id="btn-excluir" class="btn-excluir">Excluir</button>  -->
+            </form>
+        </div>
+    </div>
+    <div id="modalAdicionar" class="modal">
+        <div class="modal-content-adicionar">
+            <span class="close-adicionar">&times;</span>
+            <h2>Adicionar Usuário</h2>
+            <form id="formAdicionar">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nomeAdicionar" required>
+
+                <label for="Nome de usuário">Nome de Usuário:</label>
+                <input type="text" id="nome_usuarioAdicionar" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="emailAdicionar" required>
+
+
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+<!-- fim modal (editar/excluir/add)  -->
 
     <hr class="divider" style="margin-bottom: 0;">
 
@@ -431,9 +624,75 @@
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 
     <script>
+        // tabela 1 
         var users = [];
         document.addEventListener("DOMContentLoaded", function () {
+            // mudanças (editar/excluir/add)
+            const modalAdicionar = document.getElementById("modalAdicionar");
+            const formAdicionar = document.getElementById("formAdicionar");
 
+            // Função para abrir o modal de adicionar usuário
+            function abrirModalAdicionar() {
+                modalAdicionar.style.display = "block";
+            }
+
+            // Função para fechar o modal de adicionar usuário
+            function fecharModalAdicionar() {
+                modalAdicionar.style.display = "none";
+            }
+
+            // Adiciona um evento de clique ao botão de adicionar usuário para abrir o modal
+            document.getElementById("btnAbrirModalAdicionar").addEventListener("click", abrirModalAdicionar);
+
+            // Adiciona um evento de envio ao formulário de adicionar usuário
+            formAdicionar.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                // Obtenha os valores dos campos do formulário
+                const nome = document.getElementById("nomeAdicionar").value;
+                const email = document.getElementById("emailAdicionar").value;
+                const nome_usuario = document.getElementById("nome_usuarioAdicionar").value;
+
+                // Aqui você pode fazer o que quiser com os valores, como enviá-los para o backend
+                try {
+                    const response = await fetch('http://localhost:3000/user');
+                    const result = await response.json();
+                    const userExists = result.users.filter(user => user.email === email);
+
+                    if (userExists.length > 0) {
+                        alert('O email já existe. Por favor, escolha um email diferente.');
+                    } else {
+                        const newUser = {
+                            nome_completo: nome,
+                            usuario : nome_usuario,
+                            email: email,
+                            tipo: "Cliente"
+                        };
+
+                        const registerResponse = await fetch('http://localhost:3000/user', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(newUser)
+                        });
+
+                        if (registerResponse.ok) {
+                            alert('Cadastro realizado com sucesso!');
+                            carregarUsers()
+                        } else {
+                            alert('Cadastro falhou');
+                        }
+                    }
+                } catch (error) {
+                    console.error('Erro ao registrar usuário:', error);
+                    alert('Um erro ocorreu. Por favor, tente novamente mais tarde.');
+                }
+
+                // Após lidar com os valores, feche o modal
+                fecharModalAdicionar();
+            });
+            //   fim mudanças (editar/excluir/add)
 
             async function carregarUsers() {
                 try {
@@ -501,16 +760,130 @@
                     row.appendChild(tdEditar);
                     row.appendChild(tdExcluir);
 
+                    // mudanças (excluir/editar/add)
+                    const btnAtualizar = document.createElement("button");
+                    btnAtualizar.textContent = "Edit"
+                    btnAtualizar.classList.add("btn-abrirEditar")
+                    btnAtualizar.addEventListener("click", () => {
+                        abrirModalEditar(user, index)
+                    });
+
+
+                    row.appendChild(btnAtualizar);
+                    // fim mudanças (excluir/editar/add)
+
                 }
                 return row;
             }
+
+            // mudanças (editar/excluir/add) 
+            async function excluirUser(id) {
+                if (confirm("Tem certeza de que deseja excluir este usuário?")) {
+                    try {
+                        const response = await fetch(`http://localhost:3000/user/${id}`, {
+                            method: 'DELETE'
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Erro ao deletar usuário');
+                        }
+
+                        alert("Usuário deletado com sucesso");
+                        carregarUsers();
+
+                    } catch (error) {
+                        console.error('Erro ao deletar usuário:', error);
+                        alert("Erro ao deletar usuário");
+                    }
+                }
+            }
+
+            function abrirModalEditar(user, index) {
+                const modal = document.getElementById("modal-editar");
+                const form = document.getElementById("form-editar");
+
+                form.reset();
+
+                form.querySelector("#id").value = user.id;
+                form.querySelector("#nome").value = user.nome_completo;
+                form.querySelector("#email").value = user.email;
+
+                modal.style.display = "block"
+
+                form.onsubmit = async function (event) {
+                    event.preventDefault();
+
+
+
+                    users[index].id = form.querySelector("#id").value,
+                        users[index].nome_completo = form.querySelector("#nome").value,
+                        users[index].email = form.querySelector("#email").value
+
+                    try {
+                        console.log(users[index]);
+                        const response = await fetch(`http://localhost:3000/user/${user.id}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(users[index])
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Erro ao atualizar usuário');
+                        }
+
+                        // Fechando o modal após a atualização
+                        modal.style.display = "none";
+
+                        // Recarregando os usuários após a atualização
+                        carregarUsers();
+
+                    } catch (error) {
+                        console.error('Erro ao atualizar usuário:', error);
+                    }
+
+                    modal.style.display = "none";
+
+                    exibirUsers();
+                }
+
+                document.getElementById("btn-excluir").onclick = function () {
+                    excluirUser(user.id);
+                    modal.style.display = "none"
+                }
+
+            }
+
+            const modalAtualizar = document.getElementById("modal-editar");
+            const closeBtnAtualizar = modalAtualizar.querySelector(".close-editar");
+            closeBtnAtualizar.onclick = function () {
+                modalAtualizar.style.display = "none";
+            }
+
+            const closeBtnAdicionar = modalAdicionar.querySelector(".close-adicionar");
+            closeBtnAdicionar.onclick = function () {
+                modalAdicionar.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target === modalAdicionar) {
+                    modalAdicionar.style.display = "none"
+                }
+                else if (event.target === modalAtualizar) {
+                    modalAtualizar.style.display = "none"
+                }
+            }
+            // fim mudanças (editar/excluir/add) 
 
             document.addEventListener("DOMContentLoaded", () => {
                 carregarUsers();
             });
             carregarUsers();
         })
+        // fim tabela 1 
 
+        // tabela 2 
         var users = [];
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -590,6 +963,7 @@
             });
             carregarUsers();
         })
+        // fim tabela 2 
 
     </script>
 </body>
