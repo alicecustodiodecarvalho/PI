@@ -188,9 +188,10 @@
                                                                     <td>1</td>
                                                                     <td>2024/05/25</td>
                                                                     <td>$20,00</td>
-                                                                    <td> <button type="button"><i
-                                                                                class="btn-abrirEditar"
-                                                                                class="icofont icofont-edit-alt"></i></button>
+                                                                    <td>
+                                                                        <button type="button">
+                                                                            <i class="btn-abrirEditar" class="icofont icofont-edit-alt"></i>
+                                                                        </button>
                                                                     </td>
                                                                     <td>
                                                                         <button type="button" id="btn-excluir"class="btn-excluir">
@@ -239,20 +240,22 @@
                                                                     <th>Tipo</th>
                                                                     <th>Editar</th>
                                                                     <th>Excluir</th>
-                                                                    <th><a href="#" style="font-size: 20px;"> <i
-                                                                                class="fa-solid fa-user-plus"></i> Criar
-                                                                        </a></th>
+                                                                    <th><a href="#" style="font-size: 20px;"> <i id="btnAbrirModalAdicionar" class="fa-solid fa-user-plus"></i> Criar</a></th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="lista-users2">
                                                                 <tr>
                                                                     <td>Usuário teste</td>
                                                                     <td>Comum</td>
-                                                                    <td> <a href="#!"><i
-                                                                                class="icofont icofont-edit-alt"></i></a>
+                                                                    <td>
+                                                                        <button type="button">
+                                                                            <i class="btn-abrirEditar" class="icofont icofont-edit-alt"></i>
+                                                                        </button>
                                                                     </td>
-                                                                    <td> <a href="#!"><i
-                                                                                class="icofont icofont-delete-alt"></i></a>
+                                                                    <td>
+                                                                        <button type="button" id="btn-excluir-adm" class="btn-excluir">
+                                                                            <i class="icofont icofont-delete-alt"></i>
+                                                                        </button>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -776,10 +779,90 @@
                 });
             }
 
-            function criarUser(user, index) {
+            async function excluirUser(id) {
+                if (confirm("Tem certeza de que deseja excluir este usuário?")) {
+                    try {
+                        const response = await fetch(`http://localhost:3000/user/${id}`, {
+                            method: 'DELETE'
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Erro ao deletar usuário');
+                        }
+
+                        alert("Usuário deletado com sucesso");
+                        carregarUsers();
+
+                    } catch (error) {
+                        console.error('Erro ao deletar usuário:', error);
+                        alert("Erro ao deletar usuário");
+                    }
+                }
+            }
+
+            function abrirModalEditar(user, index) {
+                const modal = document.getElementById("modal-editar");
+                const form = document.getElementById("form-editar");
+
+                form.reset();
+
+                form.querySelector("#id").value = user.id;
+                form.querySelector("#nome").value = user.nome_completo;
+                form.querySelector("#email").value = user.email;
+
+                modal.style.display = "block"
+
+                form.onsubmit = async function (event) {
+                    event.preventDefault();
+
+
+
+                    users[index].id = form.querySelector("#id").value,
+                        users[index].nome_completo = form.querySelector("#nome").value,
+                        users[index].email = form.querySelector("#email").value
+
+                    try {
+                        console.log(users[index]);
+                        const response = await fetch(`http://localhost:3000/user/${user.id}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(users[index])
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Erro ao atualizar usuário');
+                        }
+
+                        // Fechando o modal após a atualização
+                        modal.style.display = "none";
+
+                        // Recarregando os usuários após a atualização
+                        carregarUsers();
+
+                    } catch (error) {
+                        console.error('Erro ao atualizar usuário:', error);
+                    }
+
+                    modal.style.display = "none";
+
+                    exibirUsers();
+                }
+
+                document.getElementById("btn-excluir").onclick = function () {
+                    excluirUser(user.id);
+                    modal.style.display = "none"
+                }
+
+            }
+
+            function criarUser(user, index, id) {
                 const row = document.createElement("tr");
 
                 if (user.tipo == "Funcionario" || user.tipo == "Administrador") {
+                    const idUser = user.id
+
                     const tdNome = document.createElement("td");
                     tdNome.textContent = user.nome_completo;
 
@@ -798,17 +881,22 @@
 
                     const tdEditar = document.createElement("td");
                     const aEditar = document.createElement("a");
-                    aEditar.href = "#!";
+                    aEditar.classList.add("btn-abrirEditar")
                     const iconeEditar = document.createElement("i");
                     iconeEditar.classList.add("icofont", "icofont-edit-alt");
+                    aEditar.addEventListener("click", () => {
+                        abrirModalEditar(user, index)
+                    });
                     aEditar.appendChild(iconeEditar);
                     tdEditar.appendChild(aEditar);
-
+                    
                     const tdExcluir = document.createElement("td");
-                    const aExcluir = document.createElement("a");
-                    aExcluir.href = "#!";
+                    const aExcluir = document.createElement("button");
                     const iconeExcluir = document.createElement("i");
                     iconeExcluir.classList.add("icofont", "icofont-delete-alt");
+                    aExcluir.addEventListener("click",()=>{
+                        excluirUser(idUser)
+                    })
                     aExcluir.appendChild(iconeExcluir);
                     tdExcluir.appendChild(aExcluir);
 
