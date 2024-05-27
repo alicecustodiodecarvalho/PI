@@ -94,6 +94,7 @@
         </div>
     </div>
     <!-- Pre-loader end -->
+    <!-- tabela 1 -->
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper" style="background-color: #fff7da;">
@@ -151,6 +152,7 @@
                                 <!-- Page-header end -->
 
                                 <!-- Page-body start -->
+                                <!-- tabela 1 -->
                                 <div class="page-body">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -165,18 +167,19 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th>Nome</th>
-                                                                    <th>Categoria</th>
+                                                                    <th>Tipo</th>
                                                                     <th>QTD</th>
                                                                     <th>Data da compra</th>
                                                                     <th>Valor</th>
                                                                     <th>Editar</th>
                                                                     <th>Excluir</th>
                                                                     <th><a href="#" style="font-size: 20px;"> <i
-                                                                                class="fa-solid fa-user-plus"></i> Criar
-                                                                        </a></th>
+                                                                                class="fa-solid fa-user-plus"></i>
+                                                                            Criar</a>
+                                                                    </th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody id="lista-users">
+                                                            <tbody id="lista-users1">
                                                                 <tr>
                                                                     <td>Usuário teste</td>
                                                                     <td>Comum</td>
@@ -194,7 +197,7 @@
                                                             <tfoot>
                                                                 <tr>
                                                                     <th>Nome</th>
-                                                                    <th>Categoria</th>
+                                                                    <th>Tipo</th>
                                                                     <th>QTD</th>
                                                                     <th>Data da compra</th>
                                                                     <th>Valor</th>
@@ -211,6 +214,61 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- fim tabela 1 -->
+
+                                <!-- tabela 2 -->
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <!-- Zero config.table start -->
+                                            <div class="card" style="border: black solid 1px;">
+                                                <div class="card-header">
+                                                    <h5 style="font-size: 30px;">Funcionários</h5>
+                                                </div>
+                                                <div class="card-block">
+                                                    <div class="dt-responsive table-responsive">
+                                                        <table class="table table-striped table-bordered nowrap">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nome</th>
+                                                                    <th>Tipo</th>
+                                                                    <th>Editar</th>
+                                                                    <th>Excluir</th>
+                                                                    <th><a href="#" style="font-size: 20px;"> <i
+                                                                                class="fa-solid fa-user-plus"></i> Criar
+                                                                        </a></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="lista-users2">
+                                                                <tr>
+                                                                    <td>Usuário teste</td>
+                                                                    <td>Comum</td>
+                                                                    <td> <a href="#!"><i
+                                                                                class="icofont icofont-edit-alt"></i></a>
+                                                                    </td>
+                                                                    <td> <a href="#!"><i
+                                                                                class="icofont icofont-delete-alt"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th>Nome</th>
+                                                                    <th>Tipo</th>
+                                                                    <th>Editar</th>
+                                                                    <th>Excluir</th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Zero config.table end -->
+                                            <!-- tinha outras tabelas -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- fim tabela 2 -->
                             </div>
                         </div>
                         <!-- Page-body end -->
@@ -371,89 +429,167 @@
     <script type="text/javascript" src="files\assets\js\script.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    
+
     <script>
         var users = [];
         document.addEventListener("DOMContentLoaded", function () {
 
 
-        async function carregarUsers() {
-            try {
-                const response = await fetch("http://localhost:3000/user");
-                const data = await response.json();
-                users = data.users;
-                console.log("Users carregados: ", users);
-                exibirUsers();
-            } catch (error) {
-                console.error("Erro ao carregar users: ", error);
+            async function carregarUsers() {
+                try {
+                    const response = await fetch("http://localhost:3000/user");
+                    const data = await response.json();
+                    users = data.users;
+                    console.log("Users carregados: ", users);
+                    exibirUsers();
+                } catch (error) {
+                    console.error("Erro ao carregar users: ", error);
+                }
             }
-        }
 
-        function exibirUsers() {
-            const listaUsers = document.getElementById("lista-users");
-            listaUsers.innerHTML = "";
+            function exibirUsers() {
+                const listaUsers = document.getElementById("lista-users1");
+                listaUsers.innerHTML = "";
 
-            users.forEach((user, index) => {
-                const row = criarUser(user, index);
-                listaUsers.appendChild(row);
+                users.forEach((user, index) => {
+                    const row = criarUser(user, index);
+                    listaUsers.appendChild(row);
+                });
+            }
+
+            function criarUser(user, index) {
+                const row = document.createElement("tr");
+
+                if (user.tipo == "Cliente") {
+                    const tdNome = document.createElement("td");
+                    tdNome.textContent = user.nome_completo;
+
+                    const tdTipo = document.createElement("td");
+
+                    tdTipo.textContent = user.tipo;
+
+                    const tdQuantidade = document.createElement("td");
+                    tdQuantidade.textContent = user.quantidade;
+
+                    const tdData = document.createElement("td");
+                    tdData.textContent = user.data;
+
+                    const tdValor = document.createElement("td");
+                    tdValor.textContent = user.valor;
+
+                    const tdEditar = document.createElement("td");
+                    const aEditar = document.createElement("a");
+                    aEditar.href = "#!";
+                    const iconeEditar = document.createElement("i");
+                    iconeEditar.classList.add("icofont", "icofont-edit-alt");
+                    aEditar.appendChild(iconeEditar);
+                    tdEditar.appendChild(aEditar);
+
+                    const tdExcluir = document.createElement("td");
+                    const aExcluir = document.createElement("a");
+                    aExcluir.href = "#!";
+                    const iconeExcluir = document.createElement("i");
+                    iconeExcluir.classList.add("icofont", "icofont-delete-alt");
+                    aExcluir.appendChild(iconeExcluir);
+                    tdExcluir.appendChild(aExcluir);
+
+                    row.appendChild(tdNome);
+                    row.appendChild(tdTipo);
+                    row.appendChild(tdQuantidade);
+                    row.appendChild(tdData);
+                    row.appendChild(tdValor);
+                    row.appendChild(tdEditar);
+                    row.appendChild(tdExcluir);
+
+                }
+                return row;
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                carregarUsers();
             });
-        }
-
-        function criarUser(user, index) {
-            const row = document.createElement("tr");
-
-            if (user.tipo == "Cliente") {
-            const tdNome = document.createElement("td");
-            tdNome.textContent = user.nome_completo;
-
-            const tdTipo = document.createElement("td");
-                
-                tdTipo.textContent = user.tipo ;
-                
-                const tdQuantidade = document.createElement("td");
-            tdQuantidade.textContent = user.quantidade;
-
-            const tdData = document.createElement("td");
-            tdData.textContent = user.data;
-
-            const tdValor = document.createElement("td");
-            tdValor.textContent = user.valor;
-            
-            const tdEditar = document.createElement("td");
-            const aEditar = document.createElement("a");
-            aEditar.href = "#!";
-            const iconeEditar = document.createElement("i");
-            iconeEditar.classList.add("icofont", "icofont-edit-alt");
-            aEditar.appendChild(iconeEditar);
-            tdEditar.appendChild(aEditar);
-
-            const tdExcluir = document.createElement("td");
-            const aExcluir = document.createElement("a");
-            aExcluir.href = "#!";
-            const iconeExcluir = document.createElement("i");
-            iconeExcluir.classList.add("icofont", "icofont-delete-alt");
-            aExcluir.appendChild(iconeExcluir);
-            tdExcluir.appendChild(aExcluir);
-            
-            row.appendChild(tdNome);
-            row.appendChild(tdTipo);
-            row.appendChild(tdQuantidade);
-            row.appendChild(tdData);
-            row.appendChild(tdValor);
-            row.appendChild(tdEditar);
-            row.appendChild(tdExcluir);
-
-        }
-            return row;
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
             carregarUsers();
-        });
-        carregarUsers();
-    })
+        })
+
+        var users = [];
+        document.addEventListener("DOMContentLoaded", function () {
 
 
+            async function carregarUsers() {
+                try {
+                    const response = await fetch("http://localhost:3000/user");
+                    const data = await response.json();
+                    users = data.users;
+                    console.log("Users carregados: ", users);
+                    exibirUsers();
+                } catch (error) {
+                    console.error("Erro ao carregar users: ", error);
+                }
+            }
+
+            function exibirUsers() {
+                const listaUsers = document.getElementById("lista-users2");
+                listaUsers.innerHTML = "";
+
+                users.forEach((user, index) => {
+                    const row = criarUser(user, index);
+                    listaUsers.appendChild(row);
+                });
+            }
+
+            function criarUser(user, index) {
+                const row = document.createElement("tr");
+
+                if (user.tipo == "Funcionario" || user.tipo == "Administrador") {
+                    const tdNome = document.createElement("td");
+                    tdNome.textContent = user.nome_completo;
+
+                    const tdTipo = document.createElement("td");
+
+                    tdTipo.textContent = user.tipo;
+
+                    const tdQuantidade = document.createElement("td");
+                    tdQuantidade.textContent = user.quantidade;
+
+                    const tdData = document.createElement("td");
+                    tdData.textContent = user.data;
+
+                    const tdValor = document.createElement("td");
+                    tdValor.textContent = user.valor;
+
+                    const tdEditar = document.createElement("td");
+                    const aEditar = document.createElement("a");
+                    aEditar.href = "#!";
+                    const iconeEditar = document.createElement("i");
+                    iconeEditar.classList.add("icofont", "icofont-edit-alt");
+                    aEditar.appendChild(iconeEditar);
+                    tdEditar.appendChild(aEditar);
+
+                    const tdExcluir = document.createElement("td");
+                    const aExcluir = document.createElement("a");
+                    aExcluir.href = "#!";
+                    const iconeExcluir = document.createElement("i");
+                    iconeExcluir.classList.add("icofont", "icofont-delete-alt");
+                    aExcluir.appendChild(iconeExcluir);
+                    tdExcluir.appendChild(aExcluir);
+
+                    row.appendChild(tdNome);
+                    row.appendChild(tdTipo);
+                    // row.appendChild(tdQuantidade);
+                    // row.appendChild(tdData);
+                    // row.appendChild(tdValor);
+                    row.appendChild(tdEditar);
+                    row.appendChild(tdExcluir);
+
+                }
+                return row;
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                carregarUsers();
+            });
+            carregarUsers();
+        })
 
     </script>
 </body>
