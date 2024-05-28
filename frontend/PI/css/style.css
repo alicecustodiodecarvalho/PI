@@ -14031,6 +14031,7 @@ cursor: pointer;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    font-family: "Bebas Neue", sans-serif;
 }
 
 #modal-editar {
@@ -14043,6 +14044,7 @@ cursor: pointer;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .modal-content-adicionar,
@@ -14053,6 +14055,7 @@ cursor: pointer;
     border-radius: 10px;
     width: 60%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .close-adicionar,
@@ -14086,6 +14089,7 @@ cursor: pointer;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .btn-excluir:hover {
@@ -14101,6 +14105,7 @@ cursor: pointer;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .btn-abrirEditar:hover .btn-editar:hover {
@@ -14117,6 +14122,7 @@ cursor: pointer;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .modal-content {
@@ -14126,6 +14132,7 @@ cursor: pointer;
     border-radius: 10px;
     width: 60%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-family: "Bebas Neue", sans-serif;
 }
 
 #formAdicionar label {
@@ -14134,14 +14141,16 @@ cursor: pointer;
     margin-bottom: .5rem;
     color: #7b809a;
     margin-left: .25rem;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 #formAdicionar input[type="text"],
 #formAdicionar input[type="email"] {
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 5px;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 #formAdicionar input[type="submit"] {
@@ -14151,6 +14160,7 @@ cursor: pointer;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 #formAdicionar input[type="submit"]:hover {
