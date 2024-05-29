@@ -14046,7 +14046,7 @@ cursor: pointer;
     background-color: rgba(0, 0, 0, 0.4);
     font-family: "Bebas Neue", sans-serif;
 }
-
+.modal-content-adicionarFunc,
 .modal-content-adicionar,
 .modal-content-editar {
     background-color: #fefefe;
@@ -14058,6 +14058,7 @@ cursor: pointer;
     font-family: "Bebas Neue", sans-serif;
 }
 
+.close-adicionarFunc,
 .close-adicionar,
 .close-editar {
     color: #aaa;
@@ -14066,6 +14067,8 @@ cursor: pointer;
     font-weight: bold;
 }
 
+.close-adicionarFunc:hover,
+.close-adicionarFunc:focus,
 .close-adicionar:hover,
 .close-adicionar:focus,
 .close-editar:hover,
