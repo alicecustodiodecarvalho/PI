@@ -326,7 +326,7 @@
             try {
                 const response = await fetch('http://localhost:3000/user');
                 const result = await response.json();
-                const user = result.users.find(user => user.usuario === nome && user.email === email);
+                const user = result.users.find(user => user.usuario === nome && user.email === email && user.tipo === "Cliente");
 
                 if (user) {
                     if (user.senha === senha) {
