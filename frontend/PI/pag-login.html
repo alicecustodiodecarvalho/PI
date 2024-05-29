@@ -331,6 +331,7 @@
                 if (user) {
                     if (user.senha === senha) {
                         alert('Login realizado com sucesso!');
+                        localStorage.setItem('authUser', JSON.stringify(user));
                         window.location.href = 'pag-ingresso.html'; // Redirecionar para a página de dashboard ou qualquer outra
                     } else {
                         alert('Senha incorreta!');
