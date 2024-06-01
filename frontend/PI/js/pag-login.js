@@ -7,16 +7,17 @@ document.getElementById('form').addEventListener('submit', async function (event
 
     try {
         const response = await fetch('http://localhost:3000/user');
-        // const result = await response.json();
-        // const user = result.users.find(user => user.usuario === nome && user.email === email && user.tipo === "Cliente");
+        const result = await response.json()
+        const user = result.users.find(user => user.usuario === nome && user.email === email && user.tipo === "Cliente");
 
-       const login = await fetch('http://localhost:3000/user/login',{
+       if (user) {
+        const login = await fetch('http://localhost:3000/user/login',{
         method: 'POST',
         headers:{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            nome: nome,
+            usuario: nome,
             email: email,
             senha: senha
         })
@@ -31,6 +32,9 @@ document.getElementById('form').addEventListener('submit', async function (event
 
        }else{
         alert('Email ou senha incorreto')
+       }
+       } else {
+        alert('Usuario não encontrado')
        }
 
     } catch (error) {

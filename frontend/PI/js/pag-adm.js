@@ -131,16 +131,16 @@ document.addEventListener("DOMContentLoaded", function () {
             //     <i class="icofont icofont-delete-alt"></i>
             // </button>
 
-            const tdEditar = document.createElement("td");
-            const aEditar = document.createElement("a");
-            aEditar.classList.add("btn-abrirEditar")
-            const iconeEditar = document.createElement("i");
-            iconeEditar.classList.add("icofont", "icofont-edit-alt");
-            aEditar.addEventListener("click", () => {
-                abrirModalEditar(user, index)
-            });
-            aEditar.appendChild(iconeEditar);
-            tdEditar.appendChild(aEditar);
+            // const tdEditar = document.createElement("td");
+            // const aEditar = document.createElement("a");
+            // aEditar.classList.add("btn-abrirEditar")
+            // const iconeEditar = document.createElement("i");
+            // iconeEditar.classList.add("icofont", "icofont-edit-alt");
+            // aEditar.addEventListener("click", () => {
+            //     abrirModalEditar(user, index)
+            // });
+            // aEditar.appendChild(iconeEditar);
+            // tdEditar.appendChild(aEditar);
 
             const tdExcluir = document.createElement("td");
             const aExcluir = document.createElement("button");
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
             row.appendChild(tdQuantidade);
             row.appendChild(tdData);
             row.appendChild(tdValor);
-            row.appendChild(tdEditar);
+            // row.appendChild(tdEditar);
             row.appendChild(tdExcluir);
 
             // // mudanças (excluir/editar/add)
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     throw new Error('Erro ao deletar usuário');
                 }
 
-                alert("Usuário deletado com sucesso");
+                alert("Usuário deletado com sucesso!");
                 carregarUsers();
 
             } catch (error) {
@@ -199,68 +199,68 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function abrirModalEditar(user, index) {
-        const modal = document.getElementById("modal-editar");
-        const form = document.getElementById("form-editar");
+    // function abrirModalEditar(user, index) {
+    //     const modal = document.getElementById("modal-editar");
+    //     const form = document.getElementById("form-editar");
 
-        form.reset();
+    //     form.reset();
 
-        form.querySelector("#id").value = user.id;
-        form.querySelector("#nome").value = user.nome_completo;
-        form.querySelector("#email").value = user.email;
+    //     form.querySelector("#id").value = user.id;
+    //     form.querySelector("#nome").value = user.nome_completo;
+    //     form.querySelector("#email").value = user.email;
 
-        modal.style.display = "block"
+    //     modal.style.display = "block"
 
-        form.onsubmit = async function (event) {
-            event.preventDefault();
+    //     form.onsubmit = async function (event) {
+    //         event.preventDefault();
 
 
 
-            users[index].id = form.querySelector("#id").value,
-                users[index].nome_completo = form.querySelector("#nome").value,
-                users[index].email = form.querySelector("#email").value
+    //         users[index].id = form.querySelector("#id").value,
+    //             users[index].nome_completo = form.querySelector("#nome").value,
+    //             users[index].email = form.querySelector("#email").value
 
-            try {
-                console.log(users[index]);
-                const response = await fetch(`http://localhost:3000/user/${user.id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(users[index])
-                });
+    //         try {
+    //             console.log(users[index]);
+    //             const response = await fetch(`http://localhost:3000/user/${user.id}`, {
+    //                 method: 'PUT',
+    //                 headers: {
+    //                     'Content-Type': 'application/json'
+    //                 },
+    //                 body: JSON.stringify(users[index])
+    //             });
 
-                if (!response.ok) {
-                    throw new Error('Erro ao atualizar usuário');
-                }
+    //             if (!response.ok) {
+    //                 throw new Error('Erro ao atualizar usuário');
+    //             }
 
-                // Fechando o modal após a atualização
-                modal.style.display = "none";
+    //             // Fechando o modal após a atualização
+    //             modal.style.display = "none";
 
-                // Recarregando os usuários após a atualização
-                carregarUsers();
+    //             // Recarregando os usuários após a atualização
+    //             carregarUsers();
 
-            } catch (error) {
-                console.error('Erro ao atualizar usuário:', error);
-            }
+    //         } catch (error) {
+    //             console.error('Erro ao atualizar usuário:', error);
+    //         }
 
-            modal.style.display = "none";
+    //         modal.style.display = "none";
 
-            exibirUsers();
-        }
+    //         exibirUsers();
+    //     }
 
-        document.getElementById("btn-excluir").onclick = function () {
-            excluirUser(user.id);
-            modal.style.display = "none"
-        }
+    //     document.getElementById("btn-excluir").onclick = function () {
+    //         excluirUser(user.id);
+    //         modal.style.display = "none"
+    //     }
 
-    }
+    // }
 
-    const modalAtualizar = document.getElementById("modal-editar");
-    const closeBtnAtualizar = modalAtualizar.querySelector(".close-editar");
-    closeBtnAtualizar.onclick = function () {
-        modalAtualizar.style.display = "none";
-    }
+    // const modalAtualizar = document.getElementById("modal-editar");
+    // const closeBtnAtualizar = modalAtualizar.querySelector(".close-editar");
+    // closeBtnAtualizar.onclick = function () {
+    //     modalAtualizar.style.display = "none";
+    // }
 
     const closeBtnAdicionar = modalAdicionar.querySelector(".close-adicionar");
     closeBtnAdicionar.onclick = function () {
@@ -271,9 +271,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target === modalAdicionar) {
             modalAdicionar.style.display = "none"
         }
-        else if (event.target === modalAtualizar) {
-            modalAtualizar.style.display = "none"
-        }
+        // else if (event.target === modalAtualizar) {
+        //     modalAtualizar.style.display = "none"
+        // }
     }
     // fim mudanças (editar/excluir/add) 
 
@@ -453,7 +453,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     throw new Error('Erro ao deletar usuário');
                 }
 
-                alert("Usuário deletado com sucesso");
+                alert("Usuário deletado com sucesso!");
                 carregarUsers();
 
             } catch (error) {
@@ -486,7 +486,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             try {
                 console.log(users[index]);
-                const response = await fetch(`http://localhost:3000/user/${user.id}`, {
+                const response = await fetch(`http://localhost:3000/user/func/${user.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -497,6 +497,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!response.ok) {
                     throw new Error('Erro ao atualizar usuário');
                 }
+
+                alert("Usuário atualizado com sucesso!");
 
                 // Fechando o modal após a atualização
                 modal.style.display = "none";

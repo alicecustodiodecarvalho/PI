@@ -100,6 +100,19 @@ router.put("/:id",authenticateToken, async (req, res) => {
     }
 });
 
+router.put("/func/:id", async(req,res)=>{
+    const {id} = req.params
+    const data = req.body
+    data.id = +id
+    const user = await prisma.usuario.update({
+        where:{
+            id:+id
+        },
+        data
+    })
+    res.json({menssagem:"usuarios atualizado com sucesso", user})
+});
+
 
 router.delete("/:id",async(req,res)=>{
     const {id} = req.params
