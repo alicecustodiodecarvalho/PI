@@ -8,6 +8,7 @@ document.getElementById('cadastro').addEventListener('submit', async function(ev
     const senha2 = document.getElementById('senha2').value;
 
     if (senha == senha2){
+       if (senha.length >=8) {
         try {
             const response = await fetch('http://localhost:3000/user');
             const result = await response.json()
@@ -51,6 +52,9 @@ document.getElementById('cadastro').addEventListener('submit', async function(ev
             console.error('erro ao registrar', error);
             alert('um error ocorreu, tente novamente mais tarde')
         }
+       } else {
+        alert("A senha é obrigatória e deve conter no mínimo 8 caracteres")
+       }
     }
     else{
         alert("As senhas não estão iguais")

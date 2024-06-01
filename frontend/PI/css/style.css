@@ -14149,7 +14149,8 @@ cursor: pointer;
 }
 
 #formAdicionar input[type="text"],
-#formAdicionar input[type="email"] {
+#formAdicionar input[type="email"], 
+#formAdicionar input[type="password"] {
     padding: 8px;
     margin-bottom: 10px;
     border: 2px solid #ccc;
@@ -14168,6 +14169,39 @@ cursor: pointer;
 }
 
 #formAdicionar input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#formAdicionarFunc label {
+    font-size: .875rem;
+    font-weight: 400;
+    margin-bottom: .5rem;
+    color: #7b809a;
+    margin-left: .25rem;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#formAdicionarFunc input[type="text"],
+#formAdicionarFunc input[type="email"], 
+#formAdicionarFunc input[type="password"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#formAdicionarFunc input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#formAdicionarFunc input[type="submit"]:hover {
     background-color: #0056b3;
 }
 

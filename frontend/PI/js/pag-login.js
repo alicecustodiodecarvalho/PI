@@ -7,20 +7,32 @@ document.getElementById('form').addEventListener('submit', async function (event
 
     try {
         const response = await fetch('http://localhost:3000/user');
-        const result = await response.json();
-        const user = result.users.find(user => user.usuario === nome && user.email === email && user.tipo === "Cliente");
+        // const result = await response.json();
+        // const user = result.users.find(user => user.usuario === nome && user.email === email && user.tipo === "Cliente");
 
-        if (user) {
-            if (user.senha === senha) {
-                alert('Login realizado com sucesso!');
-                localStorage.setItem('authUser', JSON.stringify(user));
-                window.location.href = 'pag-ingresso.html'; // Redirecionar para a página de dashboard ou qualquer outra
-            } else {
-                alert('Senha incorreta!');
-            }
-        } else {
-            alert('Usuário não encontrado!');
-        }
+       const login = await fetch('http://localhost:3000/user/login',{
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome: nome,
+            email: email,
+            senha: senha
+        })
+       });
+
+       if (login.ok) {
+        const result = await login.json();
+        localStorage.setItem("userjwt", JSON.stringify(result))
+        alert('Login realizado com sucesso!');
+
+        window.location.href = 'pag-ingresso.html';
+
+       }else{
+        alert('Email ou senha incorreto')
+       }
+
     } catch (error) {
         console.error('Erro ao realizar login', error);
         alert('Um erro ocorreu, tente novamente mais tarde');
