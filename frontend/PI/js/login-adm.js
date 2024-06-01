@@ -42,3 +42,17 @@ document.getElementById('form').addEventListener('submit', async function (event
         alert('Um erro ocorreu, tente novamente mais tarde');
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#senha');
+
+    togglePassword.addEventListener('click', function(e) {
+        // Alterna o tipo de input entre 'password' e 'text'
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // Alterna o texto do botão
+        this.textContent = this.textContent === 'Mostrar Senha' ? 'Ocultar Senha' : 'Mostrar Senha';
+    });
+});

@@ -549,3 +549,19 @@ document.addEventListener("DOMContentLoaded", function () {
     carregarUsers();
 })
 // fim tabela 2 
+
+document.getElementById('togglePassword').addEventListener('change', function () {
+    let password = document.getElementById('senhaAdicionar');
+    let confirmPassword = document.getElementById('senhaAdicionar2');
+    let type = this.checked ? 'text' : 'password';
+    password.type = type;
+    confirmPassword.type = type;
+});
+
+document.getElementById('togglePassword2').addEventListener('change', function () {
+    let password = document.getElementById('senhaAdicionarFunc');
+    let confirmPassword = document.getElementById('senha2AdicionarFunc');
+    let type = this.checked ? 'text' : 'password';
+    password.type = type;
+    confirmPassword.type = type;
+});

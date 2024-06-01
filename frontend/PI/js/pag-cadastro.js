@@ -59,4 +59,13 @@ document.getElementById('cadastro').addEventListener('submit', async function(ev
     else{
         alert("As senhas não estão iguais")
     }
-})
+});
+
+// mostrar senha 1 
+document.getElementById('togglePassword').addEventListener('change', function () {
+    let password = document.getElementById('senha');
+    let confirmPassword = document.getElementById('senha2');
+    let type = this.checked ? 'text' : 'password';
+    password.type = type;
+    confirmPassword.type = type;
+});
