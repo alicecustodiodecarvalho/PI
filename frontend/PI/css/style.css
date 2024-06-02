@@ -14035,7 +14035,8 @@ cursor: pointer;
     font-family: "Bebas Neue", sans-serif;
 }
 
-#modal-editar {
+#modal-editar,
+#account-modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -14049,7 +14050,8 @@ cursor: pointer;
 }
 .modal-content-adicionarFunc,
 .modal-content-adicionar,
-.modal-content-editar {
+.modal-content-editar,
+.modal-content {
     background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
@@ -14061,7 +14063,8 @@ cursor: pointer;
 
 .close-adicionarFunc,
 .close-adicionar,
-.close-editar {
+.close-editar,
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -14073,7 +14076,9 @@ cursor: pointer;
 .close-adicionar:hover,
 .close-adicionar:focus,
 .close-editar:hover,
-.close-editar:focus {
+.close-editar:focus,
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -14205,7 +14210,8 @@ cursor: pointer;
     background-color: #0056b3;
 }
 
-#form-editar input[type="text"] {
+#form-editar input[type="text"], 
+#form-editar input[type="email"] {
   border: 2px solid #ccc;
 }
 
@@ -14221,5 +14227,7 @@ cursor: pointer;
 .btn-abrir-modal:hover {
     background-color: #1f1d22;
 }
+
+
 
 /*# sourceMappingURL=style.css.map */

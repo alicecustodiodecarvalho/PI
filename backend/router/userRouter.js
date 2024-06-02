@@ -61,7 +61,7 @@ router.put("/:id",authenticateToken, async (req, res) => {
     try {
         const id = Number(req.params.id);
         const data = req.body
-        const token = req.acessToken
+        const token = req.accessToken
 
         const checkUser = await prisma.usuario.findUnique({
             where:{
@@ -90,10 +90,13 @@ router.put("/:id",authenticateToken, async (req, res) => {
             data: data,
             select:{
                 id: true,
+                usuario: true,
                 nome_completo: true,
                 email: true
             }
         })
+        const jwt = generateAccessToken(user);
+        user.accessToken = jwt
         res.json({ menssagem: "usuarios atualizado com sucesso", user })
     } catch (exception) {
         exceptionHandler(exception, res);

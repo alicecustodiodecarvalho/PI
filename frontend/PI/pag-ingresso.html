@@ -20,38 +20,34 @@
     <!-- Favicon icon -->
     <!-- <link rel="icon" href="files\assets\images" type="image/x-icon"> -->
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css"
-        href="files\bower_components\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="files\bower_components\bootstrap\css\bootstrap.min.css">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css"
-        href="files\assets\icon\themify-icons\themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="files\assets\icon\themify-icons\themify-icons.css">
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="files\assets\icon\icofont\css\icofont.css">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="files\assets\icon\feather\css\feather.css">
     <!--forms-wizard css-->
-    <link rel="stylesheet" type="text/css"
-        href="files\bower_components\jquery.steps\css\jquery.steps.css">
+    <link rel="stylesheet" type="text/css" href="files\bower_components\jquery.steps\css\jquery.steps.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="files\assets\css\style.css">
 
-    <link rel="stylesheet" type="text/css"
-        href="files\assets\css\jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="files\assets\css\jquery.mCustomScrollbar.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -98,33 +94,92 @@
         <div class="pcoded-container navbar-wrapper" style="background-color: #fff7da;">
 
             <div class="container" style="background-color: #fff7da;">
-                <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-0 mb-0">
-                  <div class="logo">
-                    <img src="img/logoPI.png" alt="" width="150px" height="150px" />
-                  </div>
-            
-                  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="index.html" class="nav-link px-3" id="home">Home</a></li>
-                    <li><a href="#" class="nav-link px-3">Mapa</a></li>
-                    <li><a href="#" class="nav-link px-3">Hotel</a></li>
-                    <li><a href="#" class="nav-link px-3">Atrações</a></li>
-                    <li><a href="pag-ingresso.html" class="nav-link px-3">Ingressos</a></li>
-                    <li><a href="#" class="nav-link px-3">Contato</a></li>
-                  </ul>
-            
-                  <div class="col-sm-2 text-end">
-                    <a href="pag-login.html" class="btn btn-outline-primary me-2">
-                        Login
-                    </a>
-                    <a href="pag-cadastro.html" class="btn btn-primary">
-                        Sign-up
-                    </a>
-                  </div>
+                <header
+                    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-0 mb-0">
+                    <div class="logo">
+                        <img src="img/logoPI.png" alt="" width="150px" height="150px" />
+                    </div>
+
+                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="index.html" class="nav-link px-3" id="home">Home</a></li>
+                        <li><a href="#" class="nav-link px-3">Mapa</a></li>
+                        <li><a href="#" class="nav-link px-3">Hotel</a></li>
+                        <li><a href="#" class="nav-link px-3">Atrações</a></li>
+                        <li><a href="pag-ingresso.html" class="nav-link px-3">Ingressos</a></li>
+                        <li><a href="#" class="nav-link px-3">Contato</a></li>
+                    </ul>
+
+                    <div class="col-sm-2 text-end">
+
+                        <!-- "minha conta" -->
+                        <button id="account-btn" class="btn btn-primary" style="display:none;">Minha Conta</button>
+                        <button id="logoff" class="btn btn-outline-primary me-2" style="display:none;">Sair</button>
+
+                        <div id="account-modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-editar">&times;</span>
+                                <h2 style="display: flex; ">Editar Meus Dados</h2>
+                                <form id="form-editar">
+                                    <label for="nome" style="display: flex;">Nome de Usuário:</label>
+                                    <input type="text" id="nome" name="nome" class="form-control">
+                                    <br>
+                                    <label for="nome_comp" style="display: flex;">Nome Completo:</label>
+                                    <input type="text" id="nome_comp" name="nome_comp" class="form-control">
+                                    <br>
+                                    <label for="email" style="display: flex;">Email:</label>
+                                    <input type="email" id="email" name="email" class="form-control">
+                                    <br>
+                                    <button type="submit"
+                                        class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Editar</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- fim "minha conta" -->
+
+                        <!-- "conta"  -->
+                        <!-- <button id="conta" class="btn btn-outline-success ms-3" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Conta</button>
+
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                            aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Informações da Conta</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <form id="form-editar" class="mb-5">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="nome" placeholder="name@example.com"
+                                            required />
+                                        <label for="floatingInput">Nome de usuario</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="nome_comp"
+                                            placeholder="name@example.com" required />
+                                        <label for="floatingInput">Nome completo</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="name@example.com" required />
+                                        <label for="floatingInput">Email</label>
+                                    </div>
+
+                                    <input class="btn btn-primary" type="submit" value="Editar Meus Dados">
+                                </form>
+                                <button type="button" id="logoff" class=" btn btn-outline-danger ">sair</button>
+                            </div>
+                        </div> -->
+                        <!-- fim "conta"  -->
+
+                    </div>
                 </header>
             </div>
 
             <hr class="border-2 opacity-100" style="margin: 0; color: black;">
-            
+
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <div class="pcoded-content" style="margin-left: 0px;">
@@ -138,7 +193,8 @@
                                             <div class="">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <span style="font-size: 40px; font-family: Bebas Neue, sans-serif;">Bilheteria</span>
+                                                        <span
+                                                            style="font-size: 40px; font-family: Bebas Neue, sans-serif;">Bilheteria</span>
                                                         <!-- <img src="img/ticket.png" alt="ticket" style="width: 25px;"> -->
                                                     </div>
                                                 </div>
@@ -154,7 +210,9 @@
                                                 <!-- Shopping cart start -->
                                                 <div class="card" style="border: black solid 1px;">
                                                     <div class="card-header">
-                                                        <h5 style="font-size: 30px; font-family: Bebas Neue, sans-serif;">Ingressos</h5>
+                                                        <h5
+                                                            style="font-size: 30px; font-family: Bebas Neue, sans-serif;">
+                                                            Ingressos</h5>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="row">
@@ -199,10 +257,13 @@
                                                                                                 tabindex="0">
                                                                                                 <img src="img/sunstcachoeira-2.jpg"
                                                                                                     class="img-cachoeira"
-                                                                                                    alt="tbl" style="width: 100%; border-radius: 10px;">
+                                                                                                    alt="tbl"
+                                                                                                    style="width: 100%; border-radius: 10px;">
                                                                                             </td>
                                                                                             <td class="pro-name">
-                                                                                                <h6 style="font-family: Bebas Neue, sans-serif; font-size: 20px;">Comum</h6>
+                                                                                                <h6
+                                                                                                    style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                                    Comum</h6>
                                                                                                 <span>Direito a 4
                                                                                                     atrações/1
                                                                                                     Lanche/Sem acesso
@@ -214,17 +275,17 @@
                                                                                                     no Parque</span>
                                                                                             </td>
                                                                                             <td>R$20,00</td>
-                                                                                            
+
                                                                                             <!-- script  -->
                                                                                             <script>
-                                                                                                function zerar(){
-                                                                                                    document.getElementById('numero').value='0'
+                                                                                                function zerar() {
+                                                                                                    document.getElementById('numero').value = '0'
                                                                                                 }
-                                                                                                function zerar1(){
-                                                                                                    document.getElementById('numero1').value='0'
+                                                                                                function zerar1() {
+                                                                                                    document.getElementById('numero1').value = '0'
                                                                                                 }
-                                                                                                function zerar2(){
-                                                                                                    document.getElementById('numero2').value='0'
+                                                                                                function zerar2() {
+                                                                                                    document.getElementById('numero2').value = '0'
                                                                                                 }
                                                                                             </script>
                                                                                             <!-- script end  -->
@@ -232,11 +293,14 @@
                                                                                             <td>
                                                                                                 <input type="number"
                                                                                                     class="form-control"
-                                                                                                    value="0" id="numero">
+                                                                                                    value="0"
+                                                                                                    id="numero">
                                                                                             </td>
                                                                                             <td
                                                                                                 class="action-icon text-center">
-                                                                                                <a href="#!" type="button" onclick="zerar()"
+                                                                                                <a href="#!"
+                                                                                                    type="button"
+                                                                                                    onclick="zerar()"
                                                                                                     class="text-muted"
                                                                                                     data-toggle="tooltip"
                                                                                                     data-placement="top"
@@ -245,12 +309,24 @@
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
                                                                                             <td>
-                                                                                                <p><a id="purchaseButton1" class="btn btn-primary" href="#">Comprar</a></p>
-                                                                                                <div id="messageBox" class="hidden">
-                                                                                                    <div class="messageBox-content">
-                                                                                                        <span class="close">&times;</span>
-                                                                                                        <p>Parabéns, compra concluída!</p>
-                                                                                                        <p>Seu código de acesso ao parque é:</p>
+                                                                                                <p><a id="purchaseButton1"
+                                                                                                        class="btn btn-primary"
+                                                                                                        href="#">Comprar</a>
+                                                                                                </p>
+                                                                                                <div id="messageBox"
+                                                                                                    class="hidden">
+                                                                                                    <div
+                                                                                                        class="messageBox-content">
+                                                                                                        <span
+                                                                                                            class="close">&times;</span>
+                                                                                                        <p>Parabéns,
+                                                                                                            compra
+                                                                                                            concluída!
+                                                                                                        </p>
+                                                                                                        <p>Seu código de
+                                                                                                            acesso ao
+                                                                                                            parque é:
+                                                                                                        </p>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </td>
@@ -260,10 +336,13 @@
                                                                                                 tabindex="0">
                                                                                                 <img src="img/sunsetP-2.jpg"
                                                                                                     class="img-P"
-                                                                                                    alt="tbl" style="width: 100%; border-radius: 10px;">
+                                                                                                    alt="tbl"
+                                                                                                    style="width: 100%; border-radius: 10px;">
                                                                                             </td>
                                                                                             <td class="pro-name">
-                                                                                                <h6 style="font-family: Bebas Neue, sans-serif; font-size: 20px;"> Estudante/PCD/Idoso
+                                                                                                <h6
+                                                                                                    style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                                    Estudante/PCD/Idoso
                                                                                                 </h6>
                                                                                                 <span>Direito a 4
                                                                                                     atrações/1
@@ -281,11 +360,14 @@
                                                                                             <td>
                                                                                                 <input type="number"
                                                                                                     class="form-control"
-                                                                                                    value="0" id="numero1">
+                                                                                                    value="0"
+                                                                                                    id="numero1">
                                                                                             </td>
                                                                                             <td
                                                                                                 class="action-icon text-center">
-                                                                                                <a href="#!" type="button" onclick="zerar1()"
+                                                                                                <a href="#!"
+                                                                                                    type="button"
+                                                                                                    onclick="zerar1()"
                                                                                                     class="text-muted"
                                                                                                     data-toggle="tooltip"
                                                                                                     data-placement="top"
@@ -294,7 +376,10 @@
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
                                                                                             <td>
-                                                                                                <p><a id="purchaseButton2" class="btn btn-primary" href="#">Comprar</a></p>
+                                                                                                <p><a id="purchaseButton2"
+                                                                                                        class="btn btn-primary"
+                                                                                                        href="#">Comprar</a>
+                                                                                                </p>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="odd">
@@ -302,10 +387,13 @@
                                                                                                 tabindex="0">
                                                                                                 <img src="img/sunsetcamping.jpg"
                                                                                                     class="img-camping"
-                                                                                                    alt="tbl" style="width: 100%; border-radius: 10px;">
+                                                                                                    alt="tbl"
+                                                                                                    style="width: 100%; border-radius: 10px;">
                                                                                             </td>
                                                                                             <td class="pro-name">
-                                                                                                <h6 style="font-family: Bebas Neue, sans-serif; font-size: 20px;"> PRO </h6>
+                                                                                                <h6
+                                                                                                    style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                                    PRO </h6>
                                                                                                 <span>Direito a Todas
                                                                                                     Atrações/3
                                                                                                     Lanches/Acesso
@@ -321,11 +409,14 @@
                                                                                             <td>
                                                                                                 <input type="number"
                                                                                                     class="form-control"
-                                                                                                    value="0" id="numero2">
+                                                                                                    value="0"
+                                                                                                    id="numero2">
                                                                                             </td>
                                                                                             <td
                                                                                                 class="action-icon text-center">
-                                                                                                <a href="#!" type="button" onclick="zerar2()"
+                                                                                                <a href="#!"
+                                                                                                    type="button"
+                                                                                                    onclick="zerar2()"
                                                                                                     class="text-muted"
                                                                                                     data-toggle="tooltip"
                                                                                                     data-placement="top"
@@ -334,7 +425,10 @@
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
                                                                                             <td>
-                                                                                                <p><a id="purchaseButton3" class="btn btn-primary" href="#">Comprar</a></p>
+                                                                                                <p><a id="purchaseButton3"
+                                                                                                        class="btn btn-primary"
+                                                                                                        href="#">Comprar</a>
+                                                                                                </p>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <!-- <tr class="even">
@@ -372,8 +466,8 @@
                                                                                     </tbody>
                                                                                 </table>
                                                                             </fieldset>
-                                                                            <!-- Shopping cart fieldset end -->              
-                                                                
+                                                                            <!-- Shopping cart fieldset end -->
+
                                                                         </form>
                                                                     </section>
                                                                 </div>
@@ -400,64 +494,68 @@
 
     <div class="container">
         <footer class="py-5">
-          <div class="row">
-            <div class="logo col-6 col-md-3 mb-3" style="width: 300px; height: 300px;">
-              <img src="img/logoPI.png" alt="Logo" width="300px" height="300px">
-            </div>
-      
-            <div class="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-              </ul>
-            </div>
-      
-            <div class="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-              </ul>
-            </div>
-      
-            <div class="col-md-4 mb-3" style="max-width: 250px;">
-                <h5 class="mb-2">Receba Notificações por email</h5>
-                <form class="d-flex flex-column flex-sm-row">
-                <label for="newsletter1" class="visually-hidden">Seu melhor Email</label>
-                <input id="newsletter1" type="email" class="form-control me-2 mb-2 mb-sm-0" style="max-width: 150px; height: 35px;" placeholder="Email address">
-                <button class="btn btn-primary btn-sm" type="button">Enviar</button>
-              </form>
-            </div>
-            
-          </div>
-        </footer>
-      </div>
-      
-      <hr class="border-1 opacity-100" style="margin: 0; color:rgb(19, 19, 19)"/>
-      <div class="container">
-        
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-0">
-          <ul class="list-unstyled d-flex">
-            <p>© 2024 Sunset Park.</p>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="img/whatsapp (1).png" alt="Whatsapp" width="24px" height="24px"></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="img/instagram.png" alt="Intagram" width="24px" height="24px"></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="img/youtube.png" alt="Youtube" width="24px" height="24px"></a></li>
-          </ul>
-        </div>
-      </div>
+            <div class="row">
+                <div class="logo col-6 col-md-3 mb-3" style="width: 300px; height: 300px;">
+                    <img src="img/logoPI.png" alt="Logo" width="300px" height="300px">
+                </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-3" style="max-width: 250px;">
+                    <h5 class="mb-2">Receba Notificações por email</h5>
+                    <form class="d-flex flex-column flex-sm-row">
+                        <label for="newsletter1" class="visually-hidden">Seu melhor Email</label>
+                        <input id="newsletter1" type="email" class="form-control me-2 mb-2 mb-sm-0"
+                            style="max-width: 150px; height: 35px;" placeholder="Email address">
+                        <button class="btn btn-primary btn-sm" type="button">Enviar</button>
+                    </form>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <hr class="border-1 opacity-100" style="margin: 0; color:rgb(19, 19, 19)" />
+    <div class="container">
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-0">
+            <ul class="list-unstyled d-flex">
+                <p>© 2024 Sunset Park.</p>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="img/whatsapp (1).png" alt="Whatsapp"
+                            width="24px" height="24px"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="img/instagram.png" alt="Intagram"
+                            width="24px" height="24px"></a></li>
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="img/youtube.png" alt="Youtube"
+                            width="24px" height="24px"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-      <script src="js/pag-ingresso.js"></script>
+    <script src="js/pag-ingresso.js"></script>
 
 
     <!-- Warning Section Starts -->
@@ -505,22 +603,15 @@
 <![endif]-->
     <!-- Warning Section Ends -->
     <!-- Required Jquery -->
-    <script type="text/javascript"
-        src="files\bower_components\jquery\js\jquery.min.js"></script>
-    <script type="text/javascript"
-        src="files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
-    <script type="text/javascript"
-        src="files\bower_components\popper.js\js\popper.min.js"></script>
-    <script type="text/javascript"
-        src="files\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\bootstrap\js\bootstrap.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript"
-        src="files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
     <!-- modernizr js -->
-    <script type="text/javascript"
-        src="files\bower_components\modernizr\js\modernizr.js"></script>
-    <script type="text/javascript"
-        src="files\bower_components\modernizr\js\css-scrollbars.js"></script>
+    <script type="text/javascript" src="files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="files\bower_components\modernizr\js\css-scrollbars.js"></script>
     <!--Forms - Wizard js-->
     <script src="files\bower_components\jquery.cookie\js\jquery.cookie.js"></script>
     <script src="files\bower_components\jquery.steps\js\jquery.steps.js"></script>
@@ -528,17 +619,14 @@
     <!-- Validation js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script type="text/javascript"
-        src="files\assets\pages\form-validation\validate.js"></script>
+    <script type="text/javascript" src="files\assets\pages\form-validation\validate.js"></script>
     <!-- i18next.min.js -->
-    <script type="text/javascript"
-        src="files\bower_components\i18next\js\i18next.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\i18next\js\i18next.min.js"></script>
     <script type="text/javascript"
         src="files\bower_components\i18next-xhr-backend\js\i18nextXHRBackend.min.js"></script>
     <script type="text/javascript"
         src="files\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript"
-        src="files\bower_components\jquery-i18next\js\jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="files\bower_components\jquery-i18next\js\jquery-i18next.min.js"></script>
     <!-- Custom js -->
     <script src="files\assets\pages\forms-wizard-validation\form-wizard.js"></script>
 
