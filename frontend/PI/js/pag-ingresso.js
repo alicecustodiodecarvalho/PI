@@ -22,13 +22,6 @@ closeBtnAdicionar.onclick = function () {
     modalAdicionar.style.display = "none";
 }
 
-window.onclick = function (event) {
-    if (event.target === modalAdicionar) {
-        modalAdicionar.style.display = "none";
-    } else if (event.target === modalAtualizar) {
-        modalAtualizar.style.display = "none";
-    }
-};
 
 // "conta" 
 document.addEventListener('DOMContentLoaded', function() {
