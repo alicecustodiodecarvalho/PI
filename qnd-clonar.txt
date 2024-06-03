@@ -1,5 +1,6 @@
 -Terminal-
 cd backend
+npx prisma db pull
 npx prisma db push  
 npx prisma generate
 npm run dev

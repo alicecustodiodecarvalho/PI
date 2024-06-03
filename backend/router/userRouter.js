@@ -61,16 +61,21 @@ router.put("/:id",authenticateToken, async (req, res) => {
     try {
         const id = Number(req.params.id);
         const data = req.body
-        const token = req.accessToken
+        const token = req.acessToken
+
+        console.log(data);
+        console.log(token);
 
         const checkUser = await prisma.usuario.findUnique({
             where:{
                 id: id,
                 email: token.email
+
             }
+
         });
 
-        if (checkUser === null || id !== token.id) {
+        if (checkUser === null || id !== data.id) {
             return res.sendStatus(403);
         }
 

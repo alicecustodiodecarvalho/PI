@@ -17,6 +17,8 @@ function authenticateToken(req, res, next) {
 
         req.acessToken = data;
 
+        console.log(data, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+
         next()
     })
 }
