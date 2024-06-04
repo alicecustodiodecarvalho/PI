@@ -1,5 +1,34 @@
+
+
 // tabela 1 
 var users = [];
+
+// cpf 
+document.getElementById('cpfAdicionar').addEventListener('input', function (event) {
+    let input = event.target;
+    let value = input.value;
+
+    // Remove todos os caracteres que não sejam dígitos
+    value = value.replace(/\D/g, '');
+
+    if (value.length > 11) {
+        value = value.slice(0, 11);
+    }
+
+    // Adiciona a formatação de CPF (xxx.xxx.xxx-xx)
+    if (value.length > 3 && value.length <= 6) {
+        value = value.replace(/(\d{3})(\d+)/, '$1.$2');
+    } else if (value.length > 6 && value.length <= 9) {
+        value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
+    } else if (value.length > 9) {
+        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
+    }
+
+    // Atualiza o valor do input com a formatação
+    input.value = value;
+});
+// cpf fim
+
 document.addEventListener("DOMContentLoaded", function () {
     // mudanças (editar/excluir/add)
     const modalAdicionar = document.getElementById("modalAdicionar");
@@ -26,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const nome = document.getElementById("nomeAdicionar").value;
         const email = document.getElementById("emailAdicionar").value;
         const nome_usuario = document.getElementById("nome_usuarioAdicionar").value;
+        const cpf = document.getElementById('cpfAdicionar').value.replace(/\D/g, '');
         const senha = document.getElementById("senhaAdicionar").value;
         const senha2 = document.getElementById("senhaAdicionar2").value;
 
@@ -47,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             nome_completo: nome,
                             usuario: nome_usuario,
                             email: email,
+                            cpf: cpf,
                             senha: senha,
                             tipo: "Cliente"
                         };
@@ -286,6 +317,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // tabela 2 
 var users = [];
+
+// cpf 
+document.getElementById('cpf').addEventListener('input', function (event) {
+    let input = event.target;
+    let value = input.value;
+
+    // Remove todos os caracteres que não sejam dígitos
+    value = value.replace(/\D/g, '');
+
+    if (value.length > 11) {
+        value = value.slice(0, 11);
+    }
+
+    // Adiciona a formatação de CPF (xxx.xxx.xxx-xx)
+    if (value.length > 3 && value.length <= 6) {
+        value = value.replace(/(\d{3})(\d+)/, '$1.$2');
+    } else if (value.length > 6 && value.length <= 9) {
+        value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
+    } else if (value.length > 9) {
+        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
+    }
+
+    // Atualiza o valor do input com a formatação
+    input.value = value;
+});
+// cpf fim
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // mudanças (editar/excluir/add)
@@ -313,6 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const nome = document.getElementById("nomeAdicionarFunc").value;
         const email = document.getElementById("emailAdicionarFunc").value;
         const nome_usuario = document.getElementById("nome_usuarioAdicionarFunc").value;
+        const cpf = document.getElementById('cpf').value.replace(/\D/g, '');
         const senha = document.getElementById("senhaAdicionarFunc").value;
         const senha2 = document.getElementById("senha2AdicionarFunc").value;
 
@@ -331,6 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         nome_completo: nome,
                         usuario: nome_usuario,
                         email: email,
+                        cpf: cpf,
                         senha: senha,
                         tipo: "Funcionario"
                     };
@@ -550,6 +610,7 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 // fim tabela 2 
 
+// mostrar senha 
 document.getElementById('togglePassword').addEventListener('change', function () {
     let password = document.getElementById('senhaAdicionar');
     let confirmPassword = document.getElementById('senhaAdicionar2');
@@ -565,3 +626,5 @@ document.getElementById('togglePassword2').addEventListener('change', function (
     password.type = type;
     confirmPassword.type = type;
 });
+// mostrar senha fim 
+

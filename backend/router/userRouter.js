@@ -43,6 +43,7 @@ router.post("/", async (req, res) => {
             data: data,
             select: {
                 id: true,
+                usuario: true,
                 nome_completo: true,
                 email: true
             }

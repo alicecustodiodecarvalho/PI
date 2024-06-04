@@ -1,9 +1,35 @@
+document.getElementById('cpf').addEventListener('input', function (event) {
+    let input = event.target;
+    let value = input.value;
+
+    // Remove todos os caracteres que não sejam dígitos
+    value = value.replace(/\D/g, '');
+
+    if (value.length > 11) {
+        value = value.slice(0, 11);
+    }
+
+    // Adiciona a formatação de CPF (xxx.xxx.xxx-xx)
+    if (value.length > 3 && value.length <= 6) {
+        value = value.replace(/(\d{3})(\d+)/, '$1.$2');
+    } else if (value.length > 6 && value.length <= 9) {
+        value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
+    } else if (value.length > 9) {
+        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
+    }
+
+    // Atualiza o valor do input com a formatação
+    input.value = value;
+});
+
+
 document.getElementById('cadastro').addEventListener('submit', async function(event){
     event.preventDefault();
 
     const nomeComp = document.getElementById('nomeCompleto').value;
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
+    const cpf = document.getElementById('cpf').value.replace(/\D/g, '');
     const senha = document.getElementById('senha').value;
     const senha2 = document.getElementById('senha2').value;
 
@@ -27,6 +53,7 @@ document.getElementById('cadastro').addEventListener('submit', async function(ev
                         nome_completo: nomeComp,
                         usuario : nome,
                         email: email,
+                        cpf: cpf,
                         senha : senha,
                         tipo: "Cliente"
                     };
@@ -38,9 +65,12 @@ document.getElementById('cadastro').addEventListener('submit', async function(ev
                         },
                         body: JSON.stringify(novoUser)
                     });
-    
+                    
+                    
                     if (registerResponse.ok) {
+                        const result = await registerResponse.json()
                         alert('Cadastro realizado!!!')
+                        localStorage.setItem("userjwt", JSON.stringify(result.user))
                         window.location.href = 'pag-ingresso.html'
                     } else {
                         alert('Falha ao cadastrar!')
