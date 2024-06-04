@@ -30,12 +30,9 @@ model usuario {
   id            Int           @id @default(autoincrement())
   nome_completo String?       @db.VarChar(50)
   usuario       String?       @db.VarChar(50)
-  email         String?       @db.VarChar(255) @unique
+  email         String?       @unique @db.VarChar(255)
   senha         String?       @db.VarChar(100)
-  telefone      String?       @db.VarChar(20)
-  nascimento    DateTime?     @db.Date
   cpf           String?       @db.Char(11)
-  cnpj          String?       @db.Char(14)
   tipo          usuario_tipo?
   ingresso      ingresso[]
 }
