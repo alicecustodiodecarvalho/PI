@@ -33,7 +33,7 @@ router.post('/', async (req, res)=>{
 
 router.get('/:id', async (req, res) =>{
     try {
-        const is = Number(req.params.id);
+        const id = Number(req.params.id);
         const ingresso = await prisma.ingresso.findFirstOrThrow({
             where:{
                 id: id
