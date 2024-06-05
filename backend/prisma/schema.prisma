@@ -20,8 +20,9 @@ model ingresso {
 }
 
 model preco {
-  id    Int     @id @default(autoincrement()) @db.UnsignedInt
-  preco Decimal @db.Decimal(10, 2)
+  id            Int                  @id @default(autoincrement()) @db.UnsignedInt
+  preco         Decimal              @db.Decimal(10, 2)
+  ingresso_tipo preco_ingresso_tipo?
 }
 
 model usuario {
@@ -39,4 +40,10 @@ enum usuario_tipo {
   Administrador
   Funcionario
   Cliente
+}
+
+enum preco_ingresso_tipo {
+  Comum
+  Meia
+  Pro
 }
