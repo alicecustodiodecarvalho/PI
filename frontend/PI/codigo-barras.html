@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código de barras</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js"></script>
+</head>
+
+<body>
+    <svg id="barcode"></svg>
+    <script>
+        // Gerar o código de barras com JsBarcode
+        JsBarcode("#barcode", "teste123");
+
+        // Função para baixar o código de barras automaticamente
+        (function downloadBarcode() {
+            var barcodeSVG = document.getElementById("barcode");
+            var svgData = new XMLSerializer().serializeToString(barcodeSVG);
+
+            // Convertendo o SVG para uma imagem PNG
+            var canvas = document.createElement("canvas");
+            var ctx = canvas.getContext("2d");
+            var img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+                var imageData = canvas.toDataURL("image/png");
+
+                // Criando um link de download
+                var link = document.createElement("a");
+                link.href = imageData;
+                link.download = "barcode.png";
+                document.body.appendChild(link);
+
+                // Clicando automaticamente no link para iniciar o download
+                link.click();
+
+                // Removendo o link após o download
+                document.body.removeChild(link);
+            };
+            img.src = "data:image/svg+xml;base64," + btoa(svgData);
+        })();
+    </script>
+</body>
+
+</html>

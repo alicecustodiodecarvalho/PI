@@ -1,29 +1,92 @@
-document.getElementById('purchaseButton1').addEventListener('click', function () {
+// Função para gerar e baixar o código de barras automaticamente
+function generateAndDownloadBarcode() {
+    // Gerar um código de barras único
+    var barcodeValue = generateBarcodeValue(); // Função para gerar um valor único para o código de barras
+
+    // Gerar o código de barras com JsBarcode
+    JsBarcode("#barcode", barcodeValue, {
+        format: "CODE128",
+        width: 2,
+        height: 50,
+        displayValue: false
+    });
+
+    // Obter o SVG do código de barras
+    var barcodeSVG = document.getElementById("barcode");
+    var svgData = new XMLSerializer().serializeToString(barcodeSVG);
+
+    // Convertendo o SVG para uma imagem PNG
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+        var imageData = canvas.toDataURL("image/png");
+
+        // Criando um link de download
+        var link = document.createElement("a");
+        link.href = imageData;
+        link.download = "barcode.png";
+        document.body.appendChild(link);
+
+        // Clicando automaticamente no link para iniciar o download
+        link.click();
+
+        // Removendo o link após o download
+        document.body.removeChild(link);
+    };
+    img.src = "data:image/svg+xml;base64," + btoa(svgData);
+}
+
+// Função para gerar um valor único para o código de barras
+function generateBarcodeValue() {
+    // Aqui você pode implementar a lógica para gerar um valor único, como um número aleatório, um timestamp, ou uma combinação de informações relevantes.
+    // Por exemplo:
+    // return Math.random().toString(36).substr(2, 10); // Gera um ID único de 10 caracteres aleatórios
+    return "teste" + Math.floor(Math.random() * 1000); // Gera um código de barras com o prefixo "teste" e um número aleatório entre 0 e 999
+}
+
+// Adicionando um evento de clique ao botão "Comprar"
+document.getElementById("purchaseButton1").addEventListener("click", function() {
+    // Executar a função para gerar e baixar o código de barras
+    generateAndDownloadBarcode();
+
+    // Mostrar a mensagem de compra concluída
     var messageBox = document.getElementById('messageBox');
     messageBox.classList.remove('hidden');
     messageBox.style.display = 'block';
 });
 
-document.getElementById('purchaseButton2').addEventListener('click', function () {
+document.getElementById("purchaseButton2").addEventListener("click", function() {
+    // Executar a função para gerar e baixar o código de barras
+    generateAndDownloadBarcode();
+
+    // Mostrar a mensagem de compra concluída
     var messageBox = document.getElementById('messageBox');
     messageBox.classList.remove('hidden');
     messageBox.style.display = 'block';
 });
 
-document.getElementById('purchaseButton3').addEventListener('click', function () {
+document.getElementById("purchaseButton3").addEventListener("click", function() {
+    // Executar a função para gerar e baixar o código de barras
+    generateAndDownloadBarcode();
+
+    // Mostrar a mensagem de compra concluída
     var messageBox = document.getElementById('messageBox');
     messageBox.classList.remove('hidden');
     messageBox.style.display = 'block';
 });
 
+// Fechar o modal de mensagem ao clicar no botão de fechar
 const modalAdicionar = document.getElementById("messageBox");
 const closeBtnAdicionar = modalAdicionar.querySelector(".close");
 closeBtnAdicionar.onclick = function () {
     modalAdicionar.style.display = "none";
 }
+// codigo de barras 
 
 
-// "conta" 
+// "minha conta" 
 document.addEventListener('DOMContentLoaded', function() {
     const logado = JSON.parse(localStorage.getItem('userjwt'));
 
@@ -121,4 +184,4 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 });
-// fim "conta"
+// fim "minha conta"
