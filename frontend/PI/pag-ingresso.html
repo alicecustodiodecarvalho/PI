@@ -48,6 +48,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+    
+  
+
 </head>
 
 <body>
@@ -271,14 +275,12 @@
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
                                                                                             <td>
-                                                                                                <p><a id="purchaseButton1"
-                                                                                                        class="btn btn-primary"
-                                                                                                        href="#">Comprar</a>
+                                                                                                <p>
+                                                                                                    <button type="button" class="btn btn-primary" id="comum">Comprar</button>
                                                                                                 </p>
-                                                                                                <div id="messageBox"
-                                                                                                    class="hidden">
+                                                                                                <div id="messageBox" style="display: none;">
                                                                                                     <div
-                                                                                                        class="messageBox-content">
+                                                                                                        class="messageBox-content" id="messageBox-content">
                                                                                                         <span
                                                                                                             class="close">&times;</span>
                                                                                                         <p>Parabéns,
@@ -290,7 +292,7 @@
                                                                                                             parque é:
                                                                                                         </p>
                                                                                                         <!-- codigo de barras  -->
-                                                                                                        <svg id="barcode"></svg>
+                                                                                                        <img id="code128"></img>
                                                                                                         <!-- codigo de barras fim -->
                                                                                                     </div>
                                                                                                 </div>
@@ -341,9 +343,8 @@
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
                                                                                             <td>
-                                                                                                <p><a id="purchaseButton2"
-                                                                                                        class="btn btn-primary"
-                                                                                                        href="#">Comprar</a>
+                                                                                                <p>
+                                                                                                    <button type="button" class="btn btn-primary" id="meia">Comprar</button>
                                                                                                 </p>
                                                                                             </td>
                                                                                         </tr>
@@ -390,9 +391,8 @@
                                                                                                         class="icofont icofont-delete-alt"></i></a>
                                                                                             </td>
                                                                                             <td>
-                                                                                                <p><a id="purchaseButton3"
-                                                                                                        class="btn btn-primary"
-                                                                                                        href="#">Comprar</a>
+                                                                                                <p>
+                                                                                                    <button type="button" class="btn btn-primary" id="pro">Comprar</button>
                                                                                                 </p>
                                                                                             </td>
                                                                                         </tr>
@@ -524,52 +524,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js"></script>
 
-
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 10]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="../files/assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="../files/assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="../files/assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="../files/assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="../files/assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-    <!-- Warning Section Ends -->
-    <!-- Required Jquery -->
     <script type="text/javascript" src="files\bower_components\jquery\js\jquery.min.js"></script>
     <script type="text/javascript" src="files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
     <script type="text/javascript" src="files\bower_components\popper.js\js\popper.min.js"></script>
@@ -610,6 +564,10 @@
 
         gtag('config', 'UA-23581568-13');
     </script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js"></script>
+    <script src="js/comprar-ingresso.js"></script>
 </body>
 
 </html>

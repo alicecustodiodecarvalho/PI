@@ -75,11 +75,44 @@ router.delete('/:id', async (req, res)=>{
     }
 });
 
+router.get('/codigo/:codigo', async (req, res) => {
+    try {
+        const codigo = Number(req.params.codigo);
+
+
+        if (isNaN(codigo)) {
+            return res.status(400).json({ error: 'Invalid code' });
+        }
+
+
+
+
+        const existe = await prisma.ingresso.findFirst({
+            where: { codigo: codigo }
+        });
+
+
+        if (existe) {
+            res.json({ exists: true });
+        } else {
+            res.json({ exists: false });
+        }
+    } catch (exception) {
+        exceptionHandler(exception, res);
+    }
+});
+
+
+
+
+
 // POST INGRESSO/COMPRA/:INGRESSO_ID/:USER_ID - REGISTRAR COMPRA DE INGRESSO
 router.post('/compra/:ingresso_id/:user_id', async (req, res)=>{
     try {
         const ingressoId= Number(req.params.ingresso_id);
         const userId= Number(req.params.user_id);
+
+        const data = req.body;
 
         const ingresso = await prisma.preco.findFirstOrThrow({
             where:{id: ingressoId}
@@ -89,8 +122,9 @@ router.post('/compra/:ingresso_id/:user_id', async (req, res)=>{
         });
         const compraIngresso = await prisma.ingresso.create({
             data:{
-                ingressoId: ingresso.id,
-                userId: user.id
+                ...data,
+                id_ingresso_tipo: ingresso.id,
+                cliente_id: user.id
             }
         });
         res.status(201).json(compraIngresso)
