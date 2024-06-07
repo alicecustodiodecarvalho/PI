@@ -49,9 +49,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 
-    
-  
-
 </head>
 
 <body>
@@ -116,8 +113,8 @@
                     <div class="col-sm-2 text-end">
 
                         <!-- "minha conta" -->
-                        <button id="account-btn" class="btn btn-primary" ">Minha Conta</button>
-                        <button id="logoff" class="btn btn-outline-primary me-2"">Sair</button>
+                        <button id="account-btn" class="btn btn-primary" >Minha Conta</button>
+                        <button id="logoff" class="btn btn-outline-primary me-2">Sair</button>
 
                         <div id="account-modal" class="modal">
                             <div class="modal-content">
@@ -137,322 +134,226 @@
                                         class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Editar</button>
                                 </form>
                             </div>
-                        </div>
-                        <!-- fim "minha conta" -->
-
                     </div>
-                </header>
+                    <!-- fim "minha conta" -->
+
             </div>
+            </header>
+        </div>
 
-            <hr class="border-2 opacity-100" style="margin: 0; color: black;">
+        <hr class="border-2 opacity-100" style="margin: 0; color: black;">
 
-            <div class="pcoded-main-container">
-                <div class="pcoded-wrapper">
-                    <div class="pcoded-content" style="margin-left: 0px;">
-                        <div class="pcoded-inner-content" style="background-color: #fff7da;">
-                            <!-- Main-body start -->
-                            <div class="main-body">
-                                <div class="page-wrapper">
-                                    <!-- Page-header start -->
-                                    <div class="page-header">
-                                        <div class="row align-items-end">
-                                            <div class="">
-                                                <div class="page-header-title">
-                                                    <div class="d-inline">
-                                                        <span
-                                                            style="font-size: 40px; font-family: Bebas Neue, sans-serif;">Bilheteria</span>
-                                                        <!-- <img src="img/ticket.png" alt="ticket" style="width: 25px;"> -->
-                                                    </div>
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <div class="pcoded-content" style="margin-left: 0px;">
+                    <div class="pcoded-inner-content" style="background-color: #fff7da;">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <!-- Page-header start -->
+                                <div class="page-header">
+                                    <div class="row align-items-end">
+                                        <div class="">
+                                            <div class="page-header-title">
+                                                <div class="d-inline">
+                                                    <span
+                                                        style="font-size: 40px; font-family: Bebas Neue, sans-serif;">Bilheteria</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Page-header end -->
+                                </div>
+                                <!-- Page-header end -->
 
-                                    <!-- Page body start -->
-                                    <div class="page-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <!-- Shopping cart start -->
-                                                <div class="card" style="border: black solid 1px;">
-                                                    <div class="card-header">
-                                                        <h5
-                                                            style="font-size: 30px; font-family: Bebas Neue, sans-serif;">
-                                                            Ingressos</h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div id="wizard">
-                                                                    <section>
-                                                                        <form class="wizard-form" id="basic-forms"
-                                                                            action="#">
-                                                                            <!-- Shopping cart field et start -->
-                                                                            <!-- <h3> Ingresso </h3> -->
-                                                                            <fieldset class="scroll-container">
-                                                                                <table id="e-product-list"
-                                                                                    class="table table-responsive table-striped dt-responsive nowrap dataTable no-footer dtr-inline cart-page"
-                                                                                    role="grid" style="width: 100%;">
-                                                                                    <thead>
-                                                                                        <tr>
-                                                                                            <th class="sorting_disabled"
-                                                                                                rowspan="1" colspan="1"
-                                                                                                style="width: 125px; font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                Imagem</th>
-                                                                                            <th class="sorting_disabled"
-                                                                                                rowspan="1" colspan="1"
-                                                                                                style="width: 1023px; font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                Nome do Produto</th>
-                                                                                            <th class="sorting_disabled"
-                                                                                                rowspan="1" colspan="1"
-                                                                                                style="width: 153px; font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                Preço</th>
-                                                                                            <th class="sorting_disabled"
-                                                                                                rowspan="1" colspan="1"
-                                                                                                style="width: 100px; font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                Qtd</th>
-                                                                                            <th class="sorting_disabled"
-                                                                                                rowspan="1" colspan="1"
-                                                                                                style="width: 134px; text-align: center; font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                Excluir</th>
-                                                                                        </tr>
-                                                                                    </thead>
-                                                                                    <tbody>
-                                                                                        <tr class="odd">
-                                                                                            <td class="pro-list-img"
-                                                                                                tabindex="0">
-                                                                                                <img src="img/sunstcachoeira-2.jpg"
-                                                                                                    class="img-cachoeira"
-                                                                                                    alt="tbl"
-                                                                                                    style="width: 100%; border-radius: 10px;">
-                                                                                            </td>
-                                                                                            <td class="pro-name">
-                                                                                                <h6
-                                                                                                    style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                    Comum</h6>
-                                                                                                <span>Direito a 4
-                                                                                                    atrações/1
-                                                                                                    Lanche/Sem acesso
-                                                                                                    prioritário em
-                                                                                                    Fila/Sem acesso a
-                                                                                                    áreas exclusivas/Sem
-                                                                                                    descontos em
-                                                                                                    produtos comprados
-                                                                                                    no Parque</span>
-                                                                                            </td>
-                                                                                            <td>R$20,00</td>
-
-                                                                                            <!-- script  -->
-                                                                                            <script>
-                                                                                                function zerar() {
-                                                                                                    document.getElementById('numero').value = '0'
-                                                                                                }
-                                                                                                function zerar1() {
-                                                                                                    document.getElementById('numero1').value = '0'
-                                                                                                }
-                                                                                                function zerar2() {
-                                                                                                    document.getElementById('numero2').value = '0'
-                                                                                                }
-                                                                                            </script>
-                                                                                            <!-- script end  -->
-
-                                                                                            <td>
-                                                                                                <input type="number"
-                                                                                                    class="form-control"
-                                                                                                    value="0"
-                                                                                                    id="numero">
-                                                                                            </td>
-                                                                                            <td
-                                                                                                class="action-icon text-center">
-                                                                                                <a href="#!"
-                                                                                                    type="button"
-                                                                                                    onclick="zerar()"
-                                                                                                    class="text-muted"
-                                                                                                    data-toggle="tooltip"
-                                                                                                    data-placement="top"
-                                                                                                    title=""
-                                                                                                    data-original-title="Delete"><i
-                                                                                                        class="icofont icofont-delete-alt"></i></a>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <p>
-                                                                                                    <button type="button" class="btn btn-primary" id="comum">Comprar</button>
-                                                                                                </p>
-                                                                                                <div id="messageBox" style="display: none;">
-                                                                                                    <div
-                                                                                                        class="messageBox-content" id="messageBox-content">
-                                                                                                        <span
-                                                                                                            class="close">&times;</span>
-                                                                                                        <p>Parabéns,
-                                                                                                            compra
-                                                                                                            concluída!
-                                                                                                        </p>
-                                                                                                        <p>Seu código de
-                                                                                                            acesso ao
-                                                                                                            parque é:
-                                                                                                        </p>
-                                                                                                        <!-- codigo de barras  -->
-                                                                                                        <img id="code128"></img>
-                                                                                                        <!-- codigo de barras fim -->
-                                                                                                    </div>
+                                <!-- Page body start -->
+                                <div class="page-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <!-- Shopping cart start -->
+                                            <div class="card" style="border: black solid 1px;">
+                                                <div class="card-header">
+                                                    <h5 style="font-size: 30px; font-family: Bebas Neue, sans-serif;">
+                                                        Ingressos</h5>
+                                                </div>
+                                                <div class="card-block">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div id="wizard">
+                                                                <section>
+                                                                    <form class="wizard-form" id="basic-forms"
+                                                                        action="#">
+                                                                        <!-- Shopping cart field et start -->
+                                                                        <!-- <h3> Ingresso </h3> -->
+                                                                        <fieldset class="scroll-container">
+                                                                            <table id="e-product-list"
+                                                                                class="table table-responsive table-striped dt-responsive nowrap dataTable no-footer dtr-inline cart-page"
+                                                                                role="grid" style="width: 100%;">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th class="sorting_disabled"
+                                                                                            rowspan="1" colspan="1"
+                                                                                            style="width: 125px; font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                            Imagem</th>
+                                                                                        <th class="sorting_disabled"
+                                                                                            rowspan="1" colspan="1"
+                                                                                            style="width: 1023px; font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                            Nome do Produto</th>
+                                                                                        <th class="sorting_disabled"
+                                                                                            rowspan="1" colspan="1"
+                                                                                            style="width: 153px; font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                            Preço</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <!-- ingresso comum  -->
+                                                                                    <tr class="odd">
+                                                                                        <td class="pro-list-img"
+                                                                                            tabindex="0">
+                                                                                            <img src="img/sunstcachoeira-2.jpg"
+                                                                                                class="img-cachoeira"
+                                                                                                alt="tbl"
+                                                                                                style="width: 100%; border-radius: 10px;">
+                                                                                        </td>
+                                                                                        <td class="pro-name">
+                                                                                            <h6
+                                                                                                style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                                Comum</h6>
+                                                                                            <span>Direito a 4
+                                                                                                atrações/1
+                                                                                                Lanche/Sem acesso
+                                                                                                prioritário em
+                                                                                                Fila/Sem acesso a
+                                                                                                áreas exclusivas/Sem
+                                                                                                descontos em
+                                                                                                produtos comprados
+                                                                                                no Parque</span>
+                                                                                        </td>
+                                                                                        <td>R$20,00</td>
+                                                                                        <td>
+                                                                                            <p>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-primary"
+                                                                                                    id="comum">Comprar</button>
+                                                                                            </p>
+                                                                                            <div id="messageBox"
+                                                                                                style="display: none;">
+                                                                                                <div class="messageBox-content"
+                                                                                                    id="messageBox-content">
+                                                                                                    <span
+                                                                                                        class="close">&times;</span>
+                                                                                                    <p>Parabéns,
+                                                                                                        compra
+                                                                                                        concluída!
+                                                                                                    </p>
+                                                                                                    <p>Seu código de
+                                                                                                        acesso ao
+                                                                                                        parque é:
+                                                                                                    </p>
+                                                                                                    <!-- codigo de barras  -->
+                                                                                                    <img
+                                                                                                        id="code128"></img>
+                                                                                                    <!-- codigo de barras fim -->
                                                                                                 </div>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr class="even">
-                                                                                            <td class="pro-list-img"
-                                                                                                tabindex="0">
-                                                                                                <img src="img/sunsetP-2.jpg"
-                                                                                                    class="img-P"
-                                                                                                    alt="tbl"
-                                                                                                    style="width: 100%; border-radius: 10px;">
-                                                                                            </td>
-                                                                                            <td class="pro-name">
-                                                                                                <h6
-                                                                                                    style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                    Estudante/PCD/Idoso
-                                                                                                </h6>
-                                                                                                <span>Direito a 4
-                                                                                                    atrações/1
-                                                                                                    Lanche/Acesso
-                                                                                                    prioritário em filas
-                                                                                                    (apenas
-                                                                                                    pcd/idoso)/Sem
-                                                                                                    acesso a áreas
-                                                                                                    exclusivas/Sem
-                                                                                                    descontos em
-                                                                                                    produtos comprados
-                                                                                                    no Parque</span>
-                                                                                            </td>
-                                                                                            <td>R$10,00</td>
-                                                                                            <td>
-                                                                                                <input type="number"
-                                                                                                    class="form-control"
-                                                                                                    value="0"
-                                                                                                    id="numero1">
-                                                                                            </td>
-                                                                                            <td
-                                                                                                class="action-icon text-center">
-                                                                                                <a href="#!"
-                                                                                                    type="button"
-                                                                                                    onclick="zerar1()"
-                                                                                                    class="text-muted"
-                                                                                                    data-toggle="tooltip"
-                                                                                                    data-placement="top"
-                                                                                                    title=""
-                                                                                                    data-original-title="Delete"><i
-                                                                                                        class="icofont icofont-delete-alt"></i></a>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <p>
-                                                                                                    <button type="button" class="btn btn-primary" id="meia">Comprar</button>
-                                                                                                </p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr class="odd">
-                                                                                            <td class="pro-list-img"
-                                                                                                tabindex="0">
-                                                                                                <img src="img/sunsetcamping.jpg"
-                                                                                                    class="img-camping"
-                                                                                                    alt="tbl"
-                                                                                                    style="width: 100%; border-radius: 10px;">
-                                                                                            </td>
-                                                                                            <td class="pro-name">
-                                                                                                <h6
-                                                                                                    style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
-                                                                                                    PRO </h6>
-                                                                                                <span>Direito a Todas
-                                                                                                    Atrações/3
-                                                                                                    Lanches/Acesso
-                                                                                                    prioritário em
-                                                                                                    filas/Descontos de
-                                                                                                    10% em todos os
-                                                                                                    produtos de nosso
-                                                                                                    Parque/Direito a
-                                                                                                    áreas
-                                                                                                    exclusivas</span>
-                                                                                            </td>
-                                                                                            <td>R$50,00</td>
-                                                                                            <td>
-                                                                                                <input type="number"
-                                                                                                    class="form-control"
-                                                                                                    value="0"
-                                                                                                    id="numero2">
-                                                                                            </td>
-                                                                                            <td
-                                                                                                class="action-icon text-center">
-                                                                                                <a href="#!"
-                                                                                                    type="button"
-                                                                                                    onclick="zerar2()"
-                                                                                                    class="text-muted"
-                                                                                                    data-toggle="tooltip"
-                                                                                                    data-placement="top"
-                                                                                                    title=""
-                                                                                                    data-original-title="Delete"><i
-                                                                                                        class="icofont icofont-delete-alt"></i></a>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <p>
-                                                                                                    <button type="button" class="btn btn-primary" id="pro">Comprar</button>
-                                                                                                </p>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <!-- <tr class="even">
-                                                                                            <td class="pro-list-img"
-                                                                                                tabindex="0">
-                                                                                                <img src="files\assets\images\product-list\pro-l3.png"
-                                                                                                    class="img-fluid"
-                                                                                                    alt="tbl">
-                                                                                            </td>
-                                                                                            <td class="pro-name">
-                                                                                                <h6> T Shirts For Women
-                                                                                                </h6>
-                                                                                                <span>Lorem ipsum dolor
-                                                                                                    sit consec te
-                                                                                                    imperdiet iaculis
-                                                                                                    ipsum..</span>
-                                                                                            </td>
-                                                                                            <td>$989</td>
-                                                                                            <td>
-                                                                                                <input type="text"
-                                                                                                    class="form-control"
-                                                                                                    value="2">
-                                                                                            </td>
-                                                                                            <td
-                                                                                                class="action-icon text-center">
-                                                                                                <a href="#!"
-                                                                                                    class="text-muted"
-                                                                                                    data-toggle="tooltip"
-                                                                                                    data-placement="top"
-                                                                                                    title=""
-                                                                                                    data-original-title="Delete"><i
-                                                                                                        class="icofont icofont-delete-alt"></i></a>
-                                                                                            </td>
-                                                                                        </tr> -->
-                                                                                    </tbody>
-                                                                                </table>
-                                                                            </fieldset>
-                                                                            <!-- Shopping cart fieldset end -->
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <!-- fim ingresso comum  -->
 
-                                                                        </form>
-                                                                    </section>
-                                                                </div>
+                                                                                    <!-- Ingresso meia  -->
+                                                                                    <tr class="even">
+                                                                                        <td class="pro-list-img"
+                                                                                            tabindex="0">
+                                                                                            <img src="img/sunsetP-2.jpg"
+                                                                                                class="img-P" alt="tbl"
+                                                                                                style="width: 100%; border-radius: 10px;">
+                                                                                        </td>
+                                                                                        <td class="pro-name">
+                                                                                            <h6
+                                                                                                style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                                Estudante/PCD/Idoso
+                                                                                            </h6>
+                                                                                            <span>Direito a 4
+                                                                                                atrações/1
+                                                                                                Lanche/Acesso
+                                                                                                prioritário em filas
+                                                                                                (apenas
+                                                                                                pcd/idoso)/Sem
+                                                                                                acesso a áreas
+                                                                                                exclusivas/Sem
+                                                                                                descontos em
+                                                                                                produtos comprados
+                                                                                                no Parque</span>
+                                                                                        </td>
+                                                                                        <td>R$10,00</td>
+                                                                                        <td>
+                                                                                            <p>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-primary"
+                                                                                                    id="meia">Comprar</button>
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <!-- fim ingresso meia  -->
+
+                                                                                    <!-- ingresso PRO  -->
+                                                                                    <tr class="odd">
+                                                                                        <td class="pro-list-img"
+                                                                                            tabindex="0">
+                                                                                            <img src="img/sunsetcamping.jpg"
+                                                                                                class="img-camping"
+                                                                                                alt="tbl"
+                                                                                                style="width: 100%; border-radius: 10px;">
+                                                                                        </td>
+                                                                                        <td class="pro-name">
+                                                                                            <h6
+                                                                                                style="font-family: Bebas Neue, sans-serif; font-size: 20px;">
+                                                                                                PRO </h6>
+                                                                                            <span>Direito a Todas
+                                                                                                Atrações/3
+                                                                                                Lanches/Acesso
+                                                                                                prioritário em
+                                                                                                filas/Descontos de
+                                                                                                10% em todos os
+                                                                                                produtos de nosso
+                                                                                                Parque/Direito a
+                                                                                                áreas
+                                                                                                exclusivas</span>
+                                                                                        </td>
+                                                                                        <td>R$50,00</td>
+                                                                                        <td>
+                                                                                            <p>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-primary"
+                                                                                                    id="pro">Comprar</button>
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <!-- fim ingresso PRO  -->
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </fieldset>
+                                                                        <!-- Shopping cart fieldset end -->
+
+                                                                    </form>
+                                                                </section>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Shopping cart start -->
                                             </div>
+                                            <!-- Shopping cart start -->
                                         </div>
                                     </div>
-                                    <!-- Page body end -->
                                 </div>
-                                <!-- Main-body end -->
+                                <!-- Page body end -->
                             </div>
+                            <!-- Main-body end -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <hr class="divider" style="margin-bottom: 0;">
@@ -516,14 +417,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
-    <script src="js/pag-ingresso.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js"></script>
-
+    <!-- js modelo pronto  -->
     <script type="text/javascript" src="files\bower_components\jquery\js\jquery.min.js"></script>
     <script type="text/javascript" src="files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
     <script type="text/javascript" src="files\bower_components\popper.js\js\popper.min.js"></script>
@@ -564,10 +458,23 @@
 
         gtag('config', 'UA-23581568-13');
     </script>
-    
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- js modelo pronto  -->
+
+    <!-- meus js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="js/pag-ingresso.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js"></script>
+
     <script src="js/comprar-ingresso.js"></script>
+    <!-- meus js  -->
 </body>
 
 </html>
