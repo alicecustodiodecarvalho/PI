@@ -123,13 +123,11 @@ router.put("/func/:id", async(req,res)=>{
 });
 
 
-router.delete("/:id",async(req,res)=>{
-    const {id} = req.params
+router.delete("/:id",async (req,res)=>{
+    const id = Number (req.params.id);
     const user = await prisma.usuario.delete({
         where:{
             id:+id
-
-
         }
     })
     res.json({menssagem:"usuario deletado com sucesso", user})
