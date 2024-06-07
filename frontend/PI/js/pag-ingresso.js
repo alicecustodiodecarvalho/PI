@@ -1,9 +1,4 @@
  // Fechar o modal de mensagem ao clicar no botão de fechar
-const modalAdicionar = document.getElementById("messageBox");
-const closeBtnAdicionar = modalAdicionar.querySelector(".close");
-closeBtnAdicionar.onclick = function () {
-    modalAdicionar.style.display = "none";
-}
 
 // fechar modal fim
 

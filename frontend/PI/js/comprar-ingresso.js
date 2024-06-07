@@ -1,4 +1,4 @@
-document.getElementById('comum').addEventListener('click', async function(){
+document.getElementById('comum').addEventListener('click', async function () {
     localStorage.setItem("ing", 1)
 
     const date = new Date();
@@ -43,7 +43,7 @@ document.getElementById('comum').addEventListener('click', async function(){
     comprarIngresso()
 });
 
-document.getElementById('meia').addEventListener('click', async function(){
+document.getElementById('meia').addEventListener('click', async function () {
     localStorage.setItem("ing", 2)
 
 
@@ -99,7 +99,7 @@ document.getElementById('meia').addEventListener('click', async function(){
 
 });
 
-document.getElementById('pro').addEventListener('click', async function(){
+document.getElementById('pro').addEventListener('click', async function () {
     localStorage.setItem("ing", 3)
 
 
@@ -154,6 +154,8 @@ document.getElementById('pro').addEventListener('click', async function(){
     comprarIngresso()
 
 });
+
+const close = document.querySelector('#close');
 
 function downloadDivAsImage() {
     var element = document.getElementById('messageBox-content');
@@ -213,12 +215,13 @@ async function comprarIngresso() {
 
         const compraIngresso = await response.json();
         alert(`Compra realizada com sucesso`)
+        close.style.display = 'block'
         JsBarcode("#code128", cod);
         modal.style.display = 'block'
         // setTimeout(() => {
         //     modal.style.display = 'none'
         // }, 5 * 1000);
-        downloadDivAsImage()
+        
 
 
         localStorage.removeItem("pedido")
@@ -229,3 +232,10 @@ async function comprarIngresso() {
     }
 }
 
+const modalAdicionar = document.getElementById("messageBox");
+const closeBtnAdicionar = modalAdicionar.querySelector(".close");
+closeBtnAdicionar.onclick = function () {
+    close.style.display = 'none'
+    downloadDivAsImage()
+    modalAdicionar.style.display = "none";
+}
