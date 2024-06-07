@@ -149,14 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             tdTipo.textContent = user.tipo;
 
-            const tdQuantidade = document.createElement("td");
-            tdQuantidade.textContent = user.quantidade;
-
-            const tdData = document.createElement("td");
-            tdData.textContent = user.data;
-
-            const tdValor = document.createElement("td");
-            tdValor.textContent = user.valor;
+            
 
             // <button type="button" id="btn-excluir"class="btn-excluir">
             //     <i class="icofont icofont-delete-alt"></i>
@@ -185,9 +178,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             row.appendChild(tdNome);
             row.appendChild(tdTipo);
-            row.appendChild(tdQuantidade);
-            row.appendChild(tdData);
-            row.appendChild(tdValor);
+            // row.appendChild(tdQuantidade);
+            // row.appendChild(tdData);
+            // row.appendChild(tdValor);
             // row.appendChild(tdEditar);
             row.appendChild(tdExcluir);
 
