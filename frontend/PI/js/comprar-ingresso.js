@@ -158,7 +158,7 @@ document.getElementById('pro').addEventListener('click', async function () {
 const close = document.querySelector('#close');
 
 function downloadDivAsImage() {
-    var element = document.getElementById('messageBox-content');
+    var element = document.getElementById('ingresso');
     if (element) {
         html2canvas(element, { useCORS: true }).then(function (canvas) {
             var imageData = canvas.toDataURL("image/png");
@@ -176,8 +176,8 @@ function downloadDivAsImage() {
     }
 }
 
-
-const modal = document.querySelector('#messageBox')
+const modalIngresso = document.querySelector('#ingresso');
+const modal = document.querySelector('#messageBox');
 
 async function comprarIngresso() {
     const pedido = localStorage.getItem("pedido");
@@ -216,17 +216,17 @@ async function comprarIngresso() {
         const compraIngresso = await response.json();
         alert(`Compra realizada com sucesso`)
         close.style.display = 'block'
+        modalIngresso.style.display = 'block'
         JsBarcode("#code128", cod);
+        downloadDivAsImage()
         modal.style.display = 'block'
         // setTimeout(() => {
         //     modal.style.display = 'none'
         // }, 5 * 1000);
-        
 
 
-        localStorage.removeItem("pedido")
-        localStorage.removeItem("codigo")
-        localStorage.removeItem("ing")
+
+
     } catch (error) {
         console.log(`Erro ao realizar compra: ${error}`)
     }
@@ -234,8 +234,13 @@ async function comprarIngresso() {
 
 const modalAdicionar = document.getElementById("messageBox");
 const closeBtnAdicionar = modalAdicionar.querySelector(".close");
-closeBtnAdicionar.onclick = function () {
+closeBtnAdicionar.onclick = async function () {
     close.style.display = 'none'
-    downloadDivAsImage()
+
+
+    modalIngresso.style.display = 'none'
     modalAdicionar.style.display = "none";
+    localStorage.removeItem("pedido")
+    localStorage.removeItem("codigo")
+    localStorage.removeItem("ing")
 }
